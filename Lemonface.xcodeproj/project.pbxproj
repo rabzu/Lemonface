@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		055ACDD0C6355E3BBE235BF5 /* Pods_LemonfaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E4948DB6832A6F7F63B97B /* Pods_LemonfaceTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C0633E0245F2DC63E63F363B /* Pods_Lemonface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8DD61ECC77D841093A566F /* Pods_Lemonface.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D822257C1B4200EA00D80AE9 /* SLPagingViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822257B1B4200EA00D80AE9 /* SLPagingViewSwift.swift */; };
+		D82225801B4201B300D80AE9 /* CandidatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D822257F1B4201B300D80AE9 /* CandidatesTVC.swift */; };
+		D82225881B4209C900D80AE9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82225871B4209C900D80AE9 /* ProfileVC.swift */; };
+		D822258A1B420C1400D80AE9 /* ApplicantsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82225891B420C1400D80AE9 /* ApplicantsTVC.swift */; };
 		D82FE3201B38A67900FEC8BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE31F1B38A67900FEC8BA /* AppDelegate.swift */; };
 		D82FE3231B38A67900FEC8BA /* Lemonface.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3211B38A67900FEC8BA /* Lemonface.xcdatamodeld */; };
-		D82FE3251B38A67900FEC8BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3241B38A67900FEC8BA /* ViewController.swift */; };
-		D82FE3281B38A67900FEC8BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D82FE3261B38A67900FEC8BA /* Main.storyboard */; };
 		D82FE32A1B38A67900FEC8BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82FE3291B38A67900FEC8BA /* Images.xcassets */; };
 		D82FE32D1B38A67900FEC8BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82FE32B1B38A67900FEC8BA /* LaunchScreen.xib */; };
 		D82FE3391B38A67900FEC8BA /* LemonfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3381B38A67900FEC8BA /* LemonfaceTests.swift */; };
+		D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
+		D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */; };
+		D89977A41B41D55900AE49F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89977A31B41D55900AE49F5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +34,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C8DD61ECC77D841093A566F /* Pods_Lemonface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lemonface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6267585A7AE6920864AAB3EE /* Pods-LemonfaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonfaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LemonfaceTests/Pods-LemonfaceTests.release.xcconfig"; sourceTree = "<group>"; };
+		AACD32670E00D5A84C4977FD /* Pods-LemonfaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemonfaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LemonfaceTests/Pods-LemonfaceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD08B8C9BAACF08FE219BF01 /* Pods-Lemonface.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lemonface.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lemonface/Pods-Lemonface.release.xcconfig"; sourceTree = "<group>"; };
+		B6E4948DB6832A6F7F63B97B /* Pods_LemonfaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemonfaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE58CCB9AB7D331921DDAB27 /* Pods-Lemonface.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lemonface.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lemonface/Pods-Lemonface.debug.xcconfig"; sourceTree = "<group>"; };
+		D822257B1B4200EA00D80AE9 /* SLPagingViewSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLPagingViewSwift.swift; sourceTree = "<group>"; };
+		D822257F1B4201B300D80AE9 /* CandidatesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidatesTVC.swift; sourceTree = "<group>"; };
+		D82225871B4209C900D80AE9 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		D82225891B420C1400D80AE9 /* ApplicantsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicantsTVC.swift; sourceTree = "<group>"; };
 		D82FE31A1B38A67900FEC8BA /* Lemonface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemonface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82FE31E1B38A67900FEC8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D82FE31F1B38A67900FEC8BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D82FE3221B38A67900FEC8BA /* Lemonface.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lemonface.xcdatamodel; sourceTree = "<group>"; };
-		D82FE3241B38A67900FEC8BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D82FE3271B38A67900FEC8BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D82FE3291B38A67900FEC8BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D82FE32C1B38A67900FEC8BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D82FE3321B38A67900FEC8BA /* LemonfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82FE3371B38A67900FEC8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D82FE3381B38A67900FEC8BA /* LemonfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonfaceTests.swift; sourceTree = "<group>"; };
+		D82FE3421B38C29E00FEC8BA /* Lemonface-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lemonface-Bridging-Header.h"; sourceTree = "<group>"; };
+		D82FE3431B38C29E00FEC8BA /* CBLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLIncrementalStore.h; sourceTree = "<group>"; };
+		D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLIncrementalStore.m; sourceTree = "<group>"; };
+		D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D89977A31B41D55900AE49F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0633E0245F2DC63E63F363B /* Pods_Lemonface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +73,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055ACDD0C6355E3BBE235BF5 /* Pods_LemonfaceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035657934A9C19F8E9A450C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C8DD61ECC77D841093A566F /* Pods_Lemonface.framework */,
+				B6E4948DB6832A6F7F63B97B /* Pods_LemonfaceTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C5A322B925F3BEC3CB361F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE58CCB9AB7D331921DDAB27 /* Pods-Lemonface.debug.xcconfig */,
+				AD08B8C9BAACF08FE219BF01 /* Pods-Lemonface.release.xcconfig */,
+				AACD32670E00D5A84C4977FD /* Pods-LemonfaceTests.debug.xcconfig */,
+				6267585A7AE6920864AAB3EE /* Pods-LemonfaceTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D82225771B41F88900D80AE9 /* SLPaginView */ = {
+			isa = PBXGroup;
+			children = (
+				D822257B1B4200EA00D80AE9 /* SLPagingViewSwift.swift */,
+			);
+			name = SLPaginView;
+			sourceTree = "<group>";
+		};
 		D82FE3111B38A67900FEC8BA = {
 			isa = PBXGroup;
 			children = (
 				D82FE31C1B38A67900FEC8BA /* Lemonface */,
 				D82FE3351B38A67900FEC8BA /* LemonfaceTests */,
 				D82FE31B1B38A67900FEC8BA /* Products */,
+				7C5A322B925F3BEC3CB361F9 /* Pods */,
+				035657934A9C19F8E9A450C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +132,14 @@
 			isa = PBXGroup;
 			children = (
 				D82FE31F1B38A67900FEC8BA /* AppDelegate.swift */,
-				D82FE3241B38A67900FEC8BA /* ViewController.swift */,
-				D82FE3261B38A67900FEC8BA /* Main.storyboard */,
+				D82225871B4209C900D80AE9 /* ProfileVC.swift */,
+				D82225891B420C1400D80AE9 /* ApplicantsTVC.swift */,
+				D822257F1B4201B300D80AE9 /* CandidatesTVC.swift */,
+				D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */,
+				D82225771B41F88900D80AE9 /* SLPaginView */,
+				D82FE3471B38C41400FEC8BA /* CB Extras */,
 				D82FE3291B38A67900FEC8BA /* Images.xcassets */,
+				D89977A31B41D55900AE49F5 /* Main.storyboard */,
 				D82FE32B1B38A67900FEC8BA /* LaunchScreen.xib */,
 				D82FE3211B38A67900FEC8BA /* Lemonface.xcdatamodeld */,
 				D82FE31D1B38A67900FEC8BA /* Supporting Files */,
@@ -93,6 +150,7 @@
 		D82FE31D1B38A67900FEC8BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D82FE3421B38C29E00FEC8BA /* Lemonface-Bridging-Header.h */,
 				D82FE31E1B38A67900FEC8BA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -115,6 +173,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D82FE3471B38C41400FEC8BA /* CB Extras */ = {
+			isa = PBXGroup;
+			children = (
+				D82FE3431B38C29E00FEC8BA /* CBLIncrementalStore.h */,
+				D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */,
+			);
+			name = "CB Extras";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D82FE33C1B38A67900FEC8BA /* Build configuration list for PBXNativeTarget "Lemonface" */;
 			buildPhases = (
+				69923C2D13B0289066F66110 /* Check Pods Manifest.lock */,
 				D82FE3161B38A67900FEC8BA /* Sources */,
 				D82FE3171B38A67900FEC8BA /* Frameworks */,
 				D82FE3181B38A67900FEC8BA /* Resources */,
+				D1E3EB79AFE1C33E4918EA1E /* Embed Pods Frameworks */,
+				ACEA46FA5649FC619684EA96 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D82FE33F1B38A67900FEC8BA /* Build configuration list for PBXNativeTarget "LemonfaceTests" */;
 			buildPhases = (
+				4FE3CE1A78CB5B0DF0E8A8EA /* Check Pods Manifest.lock */,
 				D82FE32E1B38A67900FEC8BA /* Sources */,
 				D82FE32F1B38A67900FEC8BA /* Frameworks */,
 				D82FE3301B38A67900FEC8BA /* Resources */,
+				483CE49E4650583B7D3769C7 /* Embed Pods Frameworks */,
+				7BE4612AE12EB6125C5EE5A8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D82FE3281B38A67900FEC8BA /* Main.storyboard in Resources */,
+				D89977A41B41D55900AE49F5 /* Main.storyboard in Resources */,
 				D82FE32D1B38A67900FEC8BA /* LaunchScreen.xib in Resources */,
 				D82FE32A1B38A67900FEC8BA /* Images.xcassets in Resources */,
 			);
@@ -210,14 +283,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		483CE49E4650583B7D3769C7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LemonfaceTests/Pods-LemonfaceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FE3CE1A78CB5B0DF0E8A8EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		69923C2D13B0289066F66110 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7BE4612AE12EB6125C5EE5A8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LemonfaceTests/Pods-LemonfaceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACEA46FA5649FC619684EA96 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lemonface/Pods-Lemonface-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E3EB79AFE1C33E4918EA1E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lemonface/Pods-Lemonface-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D82FE3161B38A67900FEC8BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D82FE3251B38A67900FEC8BA /* ViewController.swift in Sources */,
+				D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */,
+				D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */,
+				D822258A1B420C1400D80AE9 /* ApplicantsTVC.swift in Sources */,
+				D82225801B4201B300D80AE9 /* CandidatesTVC.swift in Sources */,
+				D82225881B4209C900D80AE9 /* ProfileVC.swift in Sources */,
 				D82FE3231B38A67900FEC8BA /* Lemonface.xcdatamodeld in Sources */,
 				D82FE3201B38A67900FEC8BA /* AppDelegate.swift in Sources */,
+				D822257C1B4200EA00D80AE9 /* SLPagingViewSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,14 +411,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D82FE3261B38A67900FEC8BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D82FE3271B38A67900FEC8BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D82FE32B1B38A67900FEC8BA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -344,26 +507,34 @@
 		};
 		D82FE33D1B38A67900FEC8BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE58CCB9AB7D331921DDAB27 /* Pods-Lemonface.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Lemonface/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lemonface/Lemonface-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D82FE33E1B38A67900FEC8BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD08B8C9BAACF08FE219BF01 /* Pods-Lemonface.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Lemonface/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lemonface/Lemonface-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		D82FE3401B38A67900FEC8BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AACD32670E00D5A84C4977FD /* Pods-LemonfaceTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -383,6 +554,7 @@
 		};
 		D82FE3411B38A67900FEC8BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6267585A7AE6920864AAB3EE /* Pods-LemonfaceTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -415,6 +587,7 @@
 				D82FE33E1B38A67900FEC8BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D82FE33F1B38A67900FEC8BA /* Build configuration list for PBXNativeTarget "LemonfaceTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +596,7 @@
 				D82FE3411B38A67900FEC8BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

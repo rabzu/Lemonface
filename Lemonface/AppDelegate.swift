@@ -13,10 +13,68 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var controller: SLPagingViewSwift?
+    
+    lazy var coreDataStack = CoreDataStack()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationController = self.window!.rootViewController as! UINavigationController
+        
+//        let viewController = navigationController.topViewController as! ViewController
+        
+//        viewController.managedContext = coreDataStack.context
+        var orange = UIColor.greenColor()
+        var gray = UIColor.yellowColor()
+        
+       let storyboard = UIStoryboard(name:"Main", bundle:nil)
+        
+        var ctr1 = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC
+        ctr1.title = "Ctr1"
+        ctr1.view.backgroundColor = orange
+        
+        var ctr2 = storyboard.instantiateViewControllerWithIdentifier("CandidatesTVC") as! CandidatesTVC
+        ctr2.title = "Ctr2"
+        ctr2.view.backgroundColor = UIColor.yellowColor()
+        
+        var ctr3 = storyboard.instantiateViewControllerWithIdentifier("ApplicantsTVC") as! ApplicantsTVC
+        ctr3.title = "Ctr3"
+        ctr3.view.backgroundColor = gray
+        
+        var img1 = UIImage(named: "gear")
+        img1 = img1?.imageWithRenderingMode(.AlwaysTemplate)
+        var img2 = UIImage(named: "profile")
+        img2 = img2?.imageWithRenderingMode(.AlwaysTemplate)
+        var img3 = UIImage(named: "chat")
+        img3 = img3?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        
+        var items = [UIImageView(image: img1), UIImageView(image: img2), UIImageView(image: img3)]
+        var controllers = [ctr1, ctr2, ctr3]
+        controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
+        
+        controller?.pagingViewMoving = ({ subviews in
+            for v in subviews {
+                var lbl = v as! UIImageView
+                var c = gray
+                
+                if(lbl.frame.origin.x > 45 && lbl.frame.origin.x < 145) {
+                    c = self.gradient(Double(lbl.frame.origin.x), topX: Double(46), bottomX: Double(144), initC: orange, goal: gray)
+                }
+                else if (lbl.frame.origin.x > 145 && lbl.frame.origin.x < 245) {
+                    c = self.gradient(Double(lbl.frame.origin.x), topX: Double(146), bottomX: Double(244), initC: gray, goal: orange)
+                }
+                else if(lbl.frame.origin.x == 145){
+                    c = orange
+                }
+                lbl.tintColor = c
+            }
+        })
+        navigationController.pushViewController(self.controller!, animated: false)
+        self.window?.rootViewController = navigationController
+        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 
@@ -41,71 +99,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
     }
-
-    // MARK: - Core Data stack
-
-    lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "io.Lemonface" in the application's documents Application Support directory.
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as! NSURL
-    }()
-
-    lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("Lemonface", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
-    }()
-
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
-        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-        // Create the coordinator and store
-        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Lemonface.sqlite")
-        var error: NSError? = nil
-        var failureReason = "There was an error creating or loading the application's saved data."
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
-            coordinator = nil
-            // Report any error we got.
-            var dict = [String: AnyObject]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
-            dict[NSUnderlyingErrorKey] = error
-            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            // Replace this with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog("Unresolved error \(error), \(error!.userInfo)")
-            abort()
-        }
+    func viewWithBackground(color: UIColor) -> UIView{
+        var v = UIView()
+        v.backgroundColor = color
+        return v
+    }
+    
+    func gradient(percent: Double, topX: Double, bottomX: Double, initC: UIColor, goal: UIColor) -> UIColor{
+        var t = (percent - bottomX) / (topX - bottomX)
         
-        return coordinator
-    }()
-
-    lazy var managedObjectContext: NSManagedObjectContext? = {
-        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
-        let coordinator = self.persistentStoreCoordinator
-        if coordinator == nil {
-            return nil
-        }
-        var managedObjectContext = NSManagedObjectContext()
-        managedObjectContext.persistentStoreCoordinator = coordinator
-        return managedObjectContext
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        if let moc = self.managedObjectContext {
-            var error: NSError? = nil
-            if moc.hasChanges && !moc.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog("Unresolved error \(error), \(error!.userInfo)")
-                abort()
-            }
-        }
+        let cgInit = CGColorGetComponents(initC.CGColor)
+        let cgGoal = CGColorGetComponents(goal.CGColor)
+        
+        
+        var r = cgInit[0] + CGFloat(t) * (cgGoal[0] - cgInit[0])
+        var g = cgInit[1] + CGFloat(t) * (cgGoal[1] - cgInit[1])
+        var b = cgInit[2] + CGFloat(t) * (cgGoal[2] - cgInit[2])
+        
+        return UIColor(red: r, green: g, blue: b, alpha: 1.0)
     }
-
+    
 }
 
