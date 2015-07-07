@@ -20,7 +20,10 @@
 		D82FE3391B38A67900FEC8BA /* LemonfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3381B38A67900FEC8BA /* LemonfaceTests.swift */; };
 		D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
 		D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */; };
+		D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */; };
 		D89977A41B41D55900AE49F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89977A31B41D55900AE49F5 /* Main.storyboard */; };
+		D8C05C451B47CB81000B850C /* LFLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C05C441B47CB81000B850C /* LFLoginVC.swift */; };
+		D8C05C471B493DC4000B850C /* LFIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C05C461B493DC4000B850C /* LFIntroVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +60,10 @@
 		D82FE3431B38C29E00FEC8BA /* CBLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLIncrementalStore.h; sourceTree = "<group>"; };
 		D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLIncrementalStore.m; sourceTree = "<group>"; };
 		D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIntroContentVC.swift; sourceTree = "<group>"; };
 		D89977A31B41D55900AE49F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D8C05C441B47CB81000B850C /* LFLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLoginVC.swift; sourceTree = "<group>"; };
+		D8C05C461B493DC4000B850C /* LFIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIntroVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				D82FE31F1B38A67900FEC8BA /* AppDelegate.swift */,
+				D8C05C461B493DC4000B850C /* LFIntroVC.swift */,
+				D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */,
+				D8C05C441B47CB81000B850C /* LFLoginVC.swift */,
 				D82225871B4209C900D80AE9 /* ProfileVC.swift */,
 				D82225891B420C1400D80AE9 /* ApplicantsTVC.swift */,
 				D822257F1B4201B300D80AE9 /* CandidatesTVC.swift */,
@@ -385,7 +394,10 @@
 				D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */,
 				D822258A1B420C1400D80AE9 /* ApplicantsTVC.swift in Sources */,
 				D82225801B4201B300D80AE9 /* CandidatesTVC.swift in Sources */,
+				D8C05C471B493DC4000B850C /* LFIntroVC.swift in Sources */,
+				D8C05C451B47CB81000B850C /* LFLoginVC.swift in Sources */,
 				D82225881B4209C900D80AE9 /* ProfileVC.swift in Sources */,
+				D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */,
 				D82FE3231B38A67900FEC8BA /* Lemonface.xcdatamodeld in Sources */,
 				D82FE3201B38A67900FEC8BA /* AppDelegate.swift in Sources */,
 				D822257C1B4200EA00D80AE9 /* SLPagingViewSwift.swift in Sources */,

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Lemonface-FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Lemonface-MCMHeaderAnimated.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-LemonfaceTests-FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LemonfaceTests-MCMHeaderAnimated.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23B8B8B6ED5389802FC44020</key>
+		<key>19CC16CFE3BEED914F8EFB8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46036B0FDC74728411C8DCD1</key>
+		<key>1FC8793B2813991E8B49F366</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>568956679670CF3B4EDD3744</key>
+		<key>2038848D7806CEF3F83B34F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83C10D94561025150EAE6F6A</key>
+		<key>376AF0298E836B75588AA931</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A66E8A31D46F67A667933751</key>
+		<key>4126D106400FF44676EE0E18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF856A428419B7DC0803A249</key>
+		<key>51919F5DD77CD3E1FD3AA4A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBC712312030563E6D07837B</key>
+		<key>70D8FBF183D9C2C017FA6F41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0540C0345B091258525A8A6</key>
+		<key>79D21C0711E40F5F0E1D36ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C8028C5461569A394361D57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8938BB106B6E722833F16F10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

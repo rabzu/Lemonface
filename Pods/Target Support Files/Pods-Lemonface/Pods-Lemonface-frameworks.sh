@@ -50,10 +50,12 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Bolts.framework'
   install_framework 'FBSDKCoreKit.framework'
+  install_framework 'FBSDKLoginKit.framework'
   install_framework 'MCMHeaderAnimated.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Bolts.framework'
   install_framework 'FBSDKCoreKit.framework'
+  install_framework 'FBSDKLoginKit.framework'
   install_framework 'MCMHeaderAnimated.framework'
 fi

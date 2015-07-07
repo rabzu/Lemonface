@@ -5,11 +5,13 @@ target 'Lemonface' do
 pod 'couchbase-lite-ios', '~> 1.1'
 pod 'MCMHeaderAnimated', '~> 0.0'
 pod 'FBSDKCoreKit', '~> 4.3'
+pod 'FBSDKLoginKit', '~> 4.3'
 end
 
 target 'LemonfaceTests' do
 pod 'couchbase-lite-ios', '~> 1.1'
 pod 'MCMHeaderAnimated', '~> 0.0'
 pod 'FBSDKCoreKit', '~> 4.3'
+pod 'FBSDKLoginKit', '~> 4.3'
 end
 

@@ -8,76 +8,50 @@
 
 import UIKit
 import CoreData
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var controller: SLPagingViewSwift?
+    
     
     lazy var coreDataStack = CoreDataStack()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let navigationController = self.window!.rootViewController as! UINavigationController
         
-//        let viewController = navigationController.topViewController as! ViewController
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name:"Main", bundle:nil)
+        let navigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! UINavigationController
+        let controller = self.setUpHeaderAnimation()
+        navigationController.pushViewController(controller!, animated: false)
+        //If app is already logged in Move straight to jobs
+      
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            
+            println("Im here ")
+            self.window?.rootViewController = navigationController
+           
         
-//        viewController.managedContext = coreDataStack.context
-        var orange = UIColor.greenColor()
-        var gray = UIColor.yellowColor()
-        
-       let storyboard = UIStoryboard(name:"Main", bundle:nil)
-        
-        var ctr1 = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC
-        ctr1.title = "Ctr1"
-        ctr1.view.backgroundColor = orange
-        
-        var ctr2 = storyboard.instantiateViewControllerWithIdentifier("CandidatesTVC") as! CandidatesTVC
-        ctr2.title = "Ctr2"
-        ctr2.view.backgroundColor = UIColor.yellowColor()
-        
-        var ctr3 = storyboard.instantiateViewControllerWithIdentifier("ApplicantsTVC") as! ApplicantsTVC
-        ctr3.title = "Ctr3"
-        ctr3.view.backgroundColor = gray
-        
-        var img1 = UIImage(named: "gear")
-        img1 = img1?.imageWithRenderingMode(.AlwaysTemplate)
-        var img2 = UIImage(named: "profile")
-        img2 = img2?.imageWithRenderingMode(.AlwaysTemplate)
-        var img3 = UIImage(named: "chat")
-        img3 = img3?.imageWithRenderingMode(.AlwaysTemplate)
-        
-        
-        var items = [UIImageView(image: img1), UIImageView(image: img2), UIImageView(image: img3)]
-        var controllers = [ctr1, ctr2, ctr3]
-        controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
-        
-        controller?.pagingViewMoving = ({ subviews in
-            for v in subviews {
-                var lbl = v as! UIImageView
-                var c = gray
-                
-                if(lbl.frame.origin.x > 45 && lbl.frame.origin.x < 145) {
-                    c = self.gradient(Double(lbl.frame.origin.x), topX: Double(46), bottomX: Double(144), initC: orange, goal: gray)
-                }
-                else if (lbl.frame.origin.x > 145 && lbl.frame.origin.x < 245) {
-                    c = self.gradient(Double(lbl.frame.origin.x), topX: Double(146), bottomX: Double(244), initC: gray, goal: orange)
-                }
-                else if(lbl.frame.origin.x == 145){
-                    c = orange
-                }
-                lbl.tintColor = c
-            }
-        })
-        navigationController.pushViewController(self.controller!, animated: false)
-        self.window?.rootViewController = navigationController
+        }else{
+            self.setUpIntroPageController()
+            let introVC =  storyboard.instantiateViewControllerWithIdentifier("LFIntroVC") as! UIViewController
+            self.window?.rootViewController = introVC
+        }
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.makeKeyAndVisible()
+        
+        
 
-        return true
+
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -94,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -104,6 +79,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var v = UIView()
         v.backgroundColor = color
         return v
+    }
+    
+    func setUpHeaderAnimation() -> SLPagingViewSwift?{
+        var controller: SLPagingViewSwift?
+        
+        //        let viewController = navigationController.topViewController as! ViewController
+        
+        //        viewController.managedContext = coreDataStack.context
+                var orange = UIColor.greenColor()
+                var gray = UIColor.yellowColor()
+        
+               let storyboard = UIStoryboard(name:"Main", bundle:nil)
+        
+                var profileCTR = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC
+                profileCTR.title = "Profile"
+                profileCTR.view.backgroundColor = orange
+        
+                var candidatesCTR = storyboard.instantiateViewControllerWithIdentifier("CandidatesTVC") as! CandidatesTVC
+                candidatesCTR.title = "Candidates"
+                candidatesCTR.view.backgroundColor = UIColor.yellowColor()
+        
+                var applicantsCTR = storyboard.instantiateViewControllerWithIdentifier("ApplicantsTVC") as! ApplicantsTVC
+                applicantsCTR.title = "Applicants"
+                applicantsCTR.view.backgroundColor = gray
+        
+                var img1 = UIImage(named: "gear")
+                img1 = img1?.imageWithRenderingMode(.AlwaysTemplate)
+                var img2 = UIImage(named: "profile")
+                img2 = img2?.imageWithRenderingMode(.AlwaysTemplate)
+                var img3 = UIImage(named: "chat")
+                img3 = img3?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        
+                var items = [UIImageView(image: img1), UIImageView(image: img2), UIImageView(image: img3)]
+                var controllers = [profileCTR, candidatesCTR, applicantsCTR]
+                controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
+        
+                controller?.pagingViewMoving = ({ subviews in
+                    for v in subviews {
+                        var lbl = v as! UIImageView
+                        var c = gray
+        
+                        if(lbl.frame.origin.x > 45 && lbl.frame.origin.x < 145) {
+                            c = self.gradient(Double(lbl.frame.origin.x), topX: Double(46), bottomX: Double(144), initC: orange, goal: gray)
+                        }
+                        else if (lbl.frame.origin.x > 145 && lbl.frame.origin.x < 245) {
+                            c = self.gradient(Double(lbl.frame.origin.x), topX: Double(146), bottomX: Double(244), initC: gray, goal: orange)
+                        }
+                        else if(lbl.frame.origin.x == 145){
+                            c = orange
+                        }
+                        lbl.tintColor = c
+                    }
+                })
+        
+        return controller
+        
+    }
+    
+    func setUpIntroPageController(){
+        var pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+        pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
+        pageControl.backgroundColor = UIColor.whiteColor()
+
     }
     
     func gradient(percent: Double, topX: Double, bottomX: Double, initC: UIColor, goal: UIColor) -> UIColor{

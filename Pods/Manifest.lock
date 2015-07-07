@@ -17,17 +17,21 @@ PODS:
   - FBSDKCoreKit/no-arc (4.3.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.3.0):
+    - FBSDKCoreKit
   - MCMHeaderAnimated (0.0.1)
 
 DEPENDENCIES:
   - couchbase-lite-ios (~> 1.1)
   - FBSDKCoreKit (~> 4.3)
+  - FBSDKLoginKit (~> 4.3)
   - MCMHeaderAnimated (~> 0.0)
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   couchbase-lite-ios: fc7be01032dc1a4c923d1a52b6734eb9b20bf072
   FBSDKCoreKit: a3a60225a84abeace291d0fe71cae29a627382c2
+  FBSDKLoginKit: 6bc2f8f2628c3b6d2e346762fff8cb55cfd3a58d
   MCMHeaderAnimated: 4264eff339b0ebba3ed3856c6da68383b386bce4
 
 COCOAPODS: 0.36.3
