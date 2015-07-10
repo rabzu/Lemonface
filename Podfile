@@ -6,6 +6,7 @@ pod 'couchbase-lite-ios', '~> 1.1'
 pod 'MCMHeaderAnimated', '~> 0.0'
 pod 'FBSDKCoreKit', '~> 4.3'
 pod 'FBSDKLoginKit', '~> 4.3'
+pod 'SwiftyJSON', '~> 2.2'
 end
 
 target 'LemonfaceTests' do
@@ -13,5 +14,6 @@ pod 'couchbase-lite-ios', '~> 1.1'
 pod 'MCMHeaderAnimated', '~> 0.0'
 pod 'FBSDKCoreKit', '~> 4.3'
 pod 'FBSDKLoginKit', '~> 4.3'
+pod 'SwiftyJSON', '~> 2.2'
 end
 

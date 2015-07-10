@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_MCMHeaderAnimated 0
 #define COCOAPODS_VERSION_PATCH_MCMHeaderAnimated 1
 
+// SwiftyJSON
+#define COCOAPODS_POD_AVAILABLE_SwiftyJSON
+#define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2
+#define COCOAPODS_VERSION_MINOR_SwiftyJSON 2
+#define COCOAPODS_VERSION_PATCH_SwiftyJSON 0
+
 // couchbase-lite-ios
 #define COCOAPODS_POD_AVAILABLE_couchbase_lite_ios
 #define COCOAPODS_VERSION_MAJOR_couchbase_lite_ios 1

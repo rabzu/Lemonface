@@ -1,56 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Lemonface" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Lemonface" representedClassName="PRODUCT_MODULE_NAME.Lemonface" syncable="YES">
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoThumb" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="appliedShops" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lemonshop" inverseName="applications" inverseEntity="Lemonshop" syncable="YES"/>
         <relationship name="interestedShops" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonshop" inverseName="invitedFaces" inverseEntity="Lemonshop" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="lemonface" inverseEntity="Message" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfilePhoto" inverseName="lemonface" inverseEntity="ProfilePhoto" syncable="YES"/>
         <relationship name="tags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tags" inverseName="lemonface" inverseEntity="Tags" syncable="YES"/>
     </entity>
-    <entity name="Lemonshop" syncable="YES">
+    <entity name="Lemonshop" representedClassName="PRODUCT_MODULE_NAME.Lemonshop" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoThumb" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="applications" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="appliedShops" inverseEntity="Lemonface" syncable="YES"/>
         <relationship name="invitedFaces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="interestedShops" inverseEntity="Lemonface" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="lemonshop" inverseEntity="Message" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShopPhoto" inverseName="lemonshop" inverseEntity="ShopPhoto" syncable="YES"/>
         <relationship name="tags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tags" inverseName="lemonshop" inverseEntity="Tags" syncable="YES"/>
     </entity>
-    <entity name="Message" syncable="YES">
+    <entity name="Message" representedClassName="PRODUCT_MODULE_NAME.Message" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lemonface" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Lemonface" inverseName="messages" inverseEntity="Lemonface" syncable="YES"/>
         <relationship name="lemonshop" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Lemonshop" inverseName="messages" inverseEntity="Lemonshop" syncable="YES"/>
     </entity>
-    <entity name="ProfilePhoto" syncable="YES">
+    <entity name="ProfilePhoto" representedClassName="PRODUCT_MODULE_NAME.ProfilePhoto" syncable="YES">
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="lemonface" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="photo" inverseEntity="Lemonface" syncable="YES"/>
     </entity>
-    <entity name="ShopPhoto" syncable="YES">
+    <entity name="ShopPhoto" representedClassName="PRODUCT_MODULE_NAME.ShopPhoto" syncable="YES">
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="lemonshop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonshop" inverseName="photo" inverseEntity="Lemonshop" syncable="YES"/>
     </entity>
-    <entity name="Tags" syncable="YES">
-        <attribute name="barman" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="barrista" optional="YES" attributeType="Boolean" syncable="YES"/>
+    <entity name="Tags" representedClassName="PRODUCT_MODULE_NAME.Tags" syncable="YES">
+        <attribute name="bar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="floor" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="kitchen" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="lemonface" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="tags" inverseEntity="Lemonface" syncable="YES"/>
         <relationship name="lemonshop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonshop" inverseName="tags" inverseEntity="Lemonshop" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Lemonface" positionX="702" positionY="-72" width="128" height="208"/>
-        <element name="Lemonshop" positionX="-83" positionY="-45" width="128" height="178"/>
-        <element name="Message" positionX="342" positionY="-270" width="128" height="105"/>
+        <element name="Lemonface" positionX="702" positionY="-72" width="128" height="193"/>
+        <element name="Lemonshop" positionX="-83" positionY="-45" width="128" height="223"/>
+        <element name="Message" positionX="315" positionY="-258" width="128" height="105"/>
         <element name="ProfilePhoto" positionX="909" positionY="63" width="128" height="73"/>
-        <element name="ShopPhoto" positionX="-290" positionY="81" width="128" height="73"/>
-        <element name="Tags" positionX="360" positionY="260" width="128" height="118"/>
+        <element name="ShopPhoto" positionX="-272" positionY="72" width="128" height="73"/>
+        <element name="Tags" positionX="313" positionY="207" width="128" height="118"/>
     </elements>
 </model>

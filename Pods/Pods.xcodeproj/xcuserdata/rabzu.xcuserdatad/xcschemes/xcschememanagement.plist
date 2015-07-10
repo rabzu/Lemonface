@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Lemonface-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Lemonface.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-LemonfaceTests-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LemonfaceTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19CC16CFE3BEED914F8EFB8E</key>
+		<key>129A00F8C882F1567E97EA39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1FC8793B2813991E8B49F366</key>
+		<key>391C4282A567764CBCD8B254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2038848D7806CEF3F83B34F8</key>
+		<key>61F524CBED7117F42B3A10C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>376AF0298E836B75588AA931</key>
+		<key>73E3115F2E960DE3A76707A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4126D106400FF44676EE0E18</key>
+		<key>8131000809F5754CA3CB0496</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51919F5DD77CD3E1FD3AA4A8</key>
+		<key>86016ED51D5D29BDD941E99A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70D8FBF183D9C2C017FA6F41</key>
+		<key>976DC81AE7D205708D1507C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79D21C0711E40F5F0E1D36ED</key>
+		<key>A6941FFE72D7A5049B92DB3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C8028C5461569A394361D57</key>
+		<key>B5759CDC45B560DE4B5779ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8938BB106B6E722833F16F10</key>
+		<key>CA781052030785116B761798</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E064206381EE3E4CFE2F6801</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E642C21E3BE3A9AA72A0C247</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1FC8793B2813991E8B49F366"
+               BlueprintIdentifier = "86016ED51D5D29BDD941E99A"
                BuildableName = "Pods_Lemonface.framework"
                BlueprintName = "Pods-Lemonface"
                ReferencedContainer = "container:Pods.xcodeproj">

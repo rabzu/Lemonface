@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jUJ-rv-Zjs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="width" constant="148" id="QuH-gV-OrE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How your favourite coffee place will find their next barista." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6cG-mn-KSe">
@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="28" id="gHu-bp-CRP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-uQ-awx">
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="21" id="TIF-1e-ASr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JBE-Xf-l4C">
@@ -127,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIe-jX-Dtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="627"/>
+            <point key="canvasLocation" x="2144" y="627"/>
         </scene>
         <!--ApplicantsTVC-->
         <scene sceneID="m07-a1-Pbk">
@@ -155,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foN-ZH-7vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="1429"/>
+            <point key="canvasLocation" x="2144" y="1429"/>
         </scene>
         <!--IntroVC-->
         <scene sceneID="Hde-NL-1Pe">
@@ -196,13 +196,11 @@
                             <constraint firstItem="lmw-xV-j9S" firstAttribute="top" secondItem="6Dy-r0-4PC" secondAttribute="bottom" constant="8" symbolic="YES" id="zEI-fv-zDh"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="NfU-uB-8Ob" id="YuB-bA-hYo"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="gcY-np-BKO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVs-5h-CmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2018" y="838"/>
+            <point key="canvasLocation" x="-1206" y="838"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="SuB-Gg-c4T">
@@ -222,17 +220,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wl1-vb-eDx">
+                                <rect key="frame" x="16" y="562" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="VAM-Fz-Rg1" eventType="touchUpInside" id="tqf-lL-CBa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="NfU-uB-8Ob" secondAttribute="centerX" id="83z-Ks-6bp"/>
                             <constraint firstAttribute="centerY" secondItem="NfU-uB-8Ob" secondAttribute="centerY" id="n0T-SI-dev"/>
+                            <constraint firstItem="IXP-1q-b9e" firstAttribute="top" secondItem="Wl1-vb-eDx" secondAttribute="bottom" constant="8" symbolic="YES" id="pfp-eH-nfG"/>
+                            <constraint firstItem="Wl1-vb-eDx" firstAttribute="leading" secondItem="h9M-9s-UKc" secondAttribute="leadingMargin" id="rYp-Ap-pJK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="NfU-uB-8Ob" id="csd-3w-313"/>
-                        <segue destination="GfZ-tR-nFc" kind="show" id="hVu-Mf-fE6"/>
-                        <segue destination="aY6-LJ-x7w" kind="show" id="FCR-dI-BMZ"/>
+                        <segue destination="GfZ-tR-nFc" kind="show" identifier="toPagePickerVC" id="hVu-Mf-fE6"/>
+                        <segue destination="aY6-LJ-x7w" kind="show" identifier="toRootNavigationController" id="FCR-dI-BMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fog-Ay-tb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,7 +251,7 @@
         <!--RootNavigationController-->
         <scene sceneID="6Ip-Kb-2PT">
             <objects>
-                <navigationController storyboardIdentifier="RootNavigationController" title="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="aY6-LJ-x7w" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigationController" title="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="aY6-LJ-x7w" customClass="RootNavigationController" customModule="Lemonface" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8ZL-9f-Fv9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -252,12 +261,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFJ-kN-3qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="838"/>
+            <point key="canvasLocation" x="1022" y="838"/>
         </scene>
-        <!--View Controller-->
+        <!--Page PickerVC-->
         <scene sceneID="Z1P-5d-8yB">
             <objects>
-                <viewController id="GfZ-tR-nFc" sceneMemberID="viewController">
+                <viewController id="GfZ-tR-nFc" customClass="LFPagePickerVC" customModule="Lemonface" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pk0-kL-361"/>
                         <viewControllerLayoutGuide type="bottom" id="PUt-5C-XCl"/>
@@ -268,25 +277,78 @@
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22M-pA-tac">
                                 <rect key="frame" x="140" y="219" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GfZ-tR-nFc" id="rKd-Ud-t1N"/>
+                                    <outlet property="delegate" destination="GfZ-tR-nFc" id="tQa-2O-98l"/>
+                                </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAQ-AS-52l">
+                                <rect key="frame" x="20" y="562" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp3-4C-LuH">
+                                <rect key="frame" x="548" y="562" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="GfZ-tR-nFc" eventType="touchUpInside" id="z7F-n6-fzP"/>
+                                    <segue destination="aY6-LJ-x7w" kind="show" id="Abw-IH-Rer"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your page:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta9-tG-vy7">
+                                <rect key="frame" x="198" y="113" width="205" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="eYf-5S-Zhk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dp3-4C-LuH" secondAttribute="trailing" constant="20" symbolic="YES" id="BbR-kf-0ja"/>
+                            <constraint firstItem="PUt-5C-XCl" firstAttribute="top" secondItem="bAQ-AS-52l" secondAttribute="bottom" constant="8" symbolic="YES" id="ER6-St-lJU"/>
                             <constraint firstAttribute="centerY" secondItem="22M-pA-tac" secondAttribute="centerY" id="IZ2-Mz-0HW"/>
+                            <constraint firstItem="Ta9-tG-vy7" firstAttribute="centerX" secondItem="22M-pA-tac" secondAttribute="centerX" id="cf2-42-CZw"/>
                             <constraint firstAttribute="centerX" secondItem="22M-pA-tac" secondAttribute="centerX" id="dI4-I5-Akd"/>
+                            <constraint firstItem="22M-pA-tac" firstAttribute="top" secondItem="Ta9-tG-vy7" secondAttribute="bottom" constant="78" id="icL-eJ-HvB"/>
+                            <constraint firstItem="bAQ-AS-52l" firstAttribute="leading" secondItem="ywP-ba-G2A" secondAttribute="leading" constant="20" symbolic="YES" id="sVD-3B-qQ0"/>
+                            <constraint firstItem="PUt-5C-XCl" firstAttribute="top" secondItem="dp3-4C-LuH" secondAttribute="bottom" constant="8" symbolic="YES" id="uPk-Tc-Gej"/>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="aY6-LJ-x7w" kind="show" id="ACY-3f-GGl"/>
+                        <outlet property="pickerView" destination="22M-pA-tac" id="GDl-aq-tSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3v-lc-f8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="210" y="-72"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jPy-SC-yyU">
+            <objects>
+                <navigationController storyboardIdentifier="IntroNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jUJ-rv-Zjs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VA4-Bo-R2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="D8P-W3-yIK" kind="relationship" relationship="rootViewController" id="ign-E9-WCY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zb-BG-Sjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2021" y="838"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q1k-o9-FYu"/>
         <segue reference="FCR-dI-BMZ"/>
+        <segue reference="ouV-Y0-b5l"/>
     </inferredMetricsTieBreakers>
 </document>

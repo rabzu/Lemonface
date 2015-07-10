@@ -17,16 +17,14 @@ class LFIntroVC: UIViewController, UIPageViewControllerDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.setUpPageViewController()
         
-        if (FBSDKAccessToken.currentAccessToken() != nil){
-            //Segue To JobsList / Candidate list VC
-            NSLog("User is already logged in")
-           // self.performSegueWithIdentifier("LoggedIn", sender:self)
-        }else{
-            
-            
-        }
+        
+
+    }
+    deinit{
+        NSLog("LFIntroVC deinit")
     }
 
     override func didReceiveMemoryWarning() {
