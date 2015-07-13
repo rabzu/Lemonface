@@ -27,7 +27,9 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+       
+        
+        
             if lemonFace{
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
             } else if lemonShop{
@@ -48,8 +50,10 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
         if( error != nil){
             //process error
+              self.navigationController?.popToRootViewControllerAnimated(true)
         }else if result.isCancelled{
             //Handle cancelation
+              self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             //If you ask for multiple permisssions at once, you should check if specific permission is missing
             if lemonFace == true {
@@ -79,13 +83,13 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
         println("logout")
     }
     
-    private let pagesRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/accounts", parameters: nil)
     func getPagesList() {
-        self.pagesRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+         let pagesRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/accounts", parameters: nil)
+        pagesRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if( error != nil){
                 //process error
-                println("Error 22: \(error)")
+                println("Error : \(error)")
             } else{
                 //                println("user: \(result.self)")
                 

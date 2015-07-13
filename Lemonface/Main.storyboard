@@ -16,12 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="5Nf-tV-uLw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAy-oV-DgN" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="269" y="285" width="62" height="30"/>
+                                <state key="normal" title="FB Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JAy-oV-DgN" firstAttribute="centerY" secondItem="5Nf-tV-uLw" secondAttribute="centerY" id="ody-UA-nOA"/>
+                            <constraint firstItem="JAy-oV-DgN" firstAttribute="centerX" secondItem="5Nf-tV-uLw" secondAttribute="centerX" id="uRJ-lM-sKk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gn-f0-WU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="-185"/>
+            <point key="canvasLocation" x="2056" y="-148"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="lRQ-rs-qkW">

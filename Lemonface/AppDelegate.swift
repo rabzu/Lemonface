@@ -15,18 +15,32 @@ import FBSDKLoginKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+    var storyboard: UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
     
     lazy var coreDataStack = CoreDataStack()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                        selector: Selector("FBTokenChanged:"),
+                                                            name: FBSDKAccessTokenDidChangeNotification,
+                                                          object: nil)
+        
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                            selector: Selector("FBProfile:"),
+                                                                name: FBSDKProfileDidChangeNotification,
+                                                              object: nil)
+        
+        
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
         let fbLaunch =  FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        FBSDKAccessToken.setCurrentAccessToken(nil)
+//        FBSDKAccessToken.setCurrentAccessToken(nil)
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let storyboard = UIStoryboard(name:"Main", bundle:nil)
+
         let navigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! UINavigationController
        
         //If app is already logged in Move straight to jobs
@@ -89,6 +103,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
+    func FBTokenChanged(notification: NSNotification) {
+//        self.setUpIntroPageController()
+//        let introNVC =  storyboard.instantiateViewControllerWithIdentifier("IntroNavigationController") as! UINavigationController
+//        self.window?.rootViewController = introNVC
+        println(notification.userInfo)
+    }
     
+    func FBProfile(notification: NSNotification) {
+        //        self.setUpIntroPageController()
+        //        let introNVC =  storyboard.instantiateViewControllerWithIdentifier("IntroNavigationController") as! UINavigationController
+        //        self.window?.rootViewController = introNVC
+        println(notification.userInfo)
+    }
 }
 
