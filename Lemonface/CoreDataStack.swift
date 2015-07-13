@@ -8,26 +8,27 @@
 
 import CoreData
 
-class CoreDataStack {
-    
-    let context:NSManagedObjectContext
+//Public for testing purposes
+public class CoreDataStack {
+    //Public for testing purposes
+    public let context:NSManagedObjectContext
     let psc:NSPersistentStoreCoordinator
     let model:NSManagedObjectModel
-    let store:CBLIncrementalStore?
-    
-    init() {
-        //1
+     let store:CBLIncrementalStore?
+    //Public for testing purposes
+    public init() {
+        //1 Load the model that we defined in the .xcdatamodelmodelId files.
         let bundle = NSBundle.mainBundle()
         let modelURL = bundle.URLForResource("Lemonface", withExtension:"momd")
         model = NSManagedObjectModel.mergedModelFromBundles(nil)!.mutableCopy() as! NSManagedObjectModel
         
-        //1.1
+        //1.1  Call updateManagedObjectModel: to insure the Core Data model is mapped to a model Couchbase Lite understands.
         CBLIncrementalStore.updateManagedObjectModel(model)
         
-        //2
+        //2 Initialize the persistent store coordinator as usual
         psc = NSPersistentStoreCoordinator(managedObjectModel:model)
         
-        //3
+        //3 Set up the managed object context
         context = NSManagedObjectContext()
         context.persistentStoreCoordinator = psc
         
@@ -37,17 +38,16 @@ class CoreDataStack {
         let urls = fileManager.URLsForDirectory(.DocumentDirectory,
             inDomains: .UserDomainMask) as! [NSURL]
         
-        
+        //5 Check if the corresponding Couchbase Lite database exists. If so, we load the existing CBLDatabase as a CBLIncrementalStore store type. If not, we perform a migration from the previous SQLite data store to Couchbase Lite.
         let documentsURL = urls[0]
         let defaultStoreURL = documentsURL.URLByAppendingPathComponent("Lemonface")
         
         let options: NSDictionary = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
-        let databaseName = "Lemonface"
+        let databaseName = "lemonface"
         let storeURL = NSURL(string: databaseName)!
         var error: NSError? = nil
         
         if (!(CBLManager.sharedInstance().existingDatabaseNamed(databaseName, error: nil) != nil)) {
-//            let defaultStoreURL = bundle.URLForResource("HitList", withExtension: "sqlite")
             let importStore = psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: defaultStoreURL, options: options as [NSObject : AnyObject], error: nil)
             store = psc.migratePersistentStore(importStore!, toURL: storeURL, options: options as [NSObject : AnyObject], withType: CBLIncrementalStore.type(), error: nil) as? CBLIncrementalStore
         } else {
@@ -60,7 +60,7 @@ class CoreDataStack {
             abort()
         }
         
-        let url =  NSURL(string: "http://localhost:4984/Lemonface/")
+        let url =  NSURL(string: "http://localhost:4984/lemonface/")
         let pull = store?.database.createPullReplication(url!)
         let push = store?.database.createPushReplication(url!)
         pull?.continuous = true

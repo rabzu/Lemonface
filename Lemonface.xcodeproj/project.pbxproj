@@ -20,9 +20,16 @@
 		D82FE3231B38A67900FEC8BA /* Lemonface.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3211B38A67900FEC8BA /* Lemonface.xcdatamodeld */; };
 		D82FE32A1B38A67900FEC8BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82FE3291B38A67900FEC8BA /* Images.xcassets */; };
 		D82FE32D1B38A67900FEC8BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82FE32B1B38A67900FEC8BA /* LaunchScreen.xib */; };
-		D82FE3391B38A67900FEC8BA /* LemonfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3381B38A67900FEC8BA /* LemonfaceTests.swift */; };
 		D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
 		D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */; };
+		D849A12F1B5458C7007FD661 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */; };
+		D849A1341B546C75007FD661 /* LemonfaceMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */; };
+		D849A13B1B547ABA007FD661 /* Lemonface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324E41B4F19BE00DA3A76 /* Lemonface.swift */; };
+		D849A13C1B547AE8007FD661 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324DE1B4F15FE00DA3A76 /* Message.swift */; };
+		D849A13D1B547AEA007FD661 /* Lemonshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324DA1B4F15FD00DA3A76 /* Lemonshop.swift */; };
+		D849A13E1B547AED007FD661 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324D81B4F15FD00DA3A76 /* Tags.swift */; };
+		D849A13F1B547AF0007FD661 /* ShopPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324D61B4F15FD00DA3A76 /* ShopPhoto.swift */; };
+		D849A1401B547AF2007FD661 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324D41B4F15FD00DA3A76 /* ProfilePhoto.swift */; };
 		D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */; };
 		D89977A41B41D55900AE49F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89977A31B41D55900AE49F5 /* Main.storyboard */; };
 		D8A324D51B4F15FD00DA3A76 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324D41B4F15FD00DA3A76 /* ProfilePhoto.swift */; };
@@ -69,11 +76,12 @@
 		D82FE32C1B38A67900FEC8BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D82FE3321B38A67900FEC8BA /* LemonfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D82FE3371B38A67900FEC8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D82FE3381B38A67900FEC8BA /* LemonfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonfaceTests.swift; sourceTree = "<group>"; };
 		D82FE3421B38C29E00FEC8BA /* Lemonface-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lemonface-Bridging-Header.h"; sourceTree = "<group>"; };
 		D82FE3431B38C29E00FEC8BA /* CBLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLIncrementalStore.h; sourceTree = "<group>"; };
 		D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLIncrementalStore.m; sourceTree = "<group>"; };
 		D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonfaceMngrTest.swift; sourceTree = "<group>"; };
 		D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIntroContentVC.swift; sourceTree = "<group>"; };
 		D89977A31B41D55900AE49F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D8A324D41B4F15FD00DA3A76 /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 		D829018A1B4DBCC3000023FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */,
 				D8A324E01B4F163900DA3A76 /* LemonfaceMngr.swift */,
 				D82901891B4DBCAD000023FD /* CoreDate */,
 			);
@@ -191,7 +200,6 @@
 				D82225871B4209C900D80AE9 /* ProfileVC.swift */,
 				D82225891B420C1400D80AE9 /* ApplicantsTVC.swift */,
 				D822257F1B4201B300D80AE9 /* CandidatesTVC.swift */,
-				D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */,
 				D8A324E61B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift */,
 				D82FE3471B38C41400FEC8BA /* CB Extras */,
 				D82225771B41F88900D80AE9 /* SLPaginView */,
@@ -217,7 +225,8 @@
 		D82FE3351B38A67900FEC8BA /* LemonfaceTests */ = {
 			isa = PBXGroup;
 			children = (
-				D82FE3381B38A67900FEC8BA /* LemonfaceTests.swift */,
+				D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */,
+				D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */,
 				D82FE3361B38A67900FEC8BA /* Supporting Files */,
 			);
 			path = LemonfaceTests;
@@ -468,7 +477,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D82FE3391B38A67900FEC8BA /* LemonfaceTests.swift in Sources */,
+				D849A1401B547AF2007FD661 /* ProfilePhoto.swift in Sources */,
+				D849A13F1B547AF0007FD661 /* ShopPhoto.swift in Sources */,
+				D849A13D1B547AEA007FD661 /* Lemonshop.swift in Sources */,
+				D849A1341B546C75007FD661 /* LemonfaceMngrTest.swift in Sources */,
+				D849A13E1B547AED007FD661 /* Tags.swift in Sources */,
+				D849A13C1B547AE8007FD661 /* Message.swift in Sources */,
+				D849A13B1B547ABA007FD661 /* Lemonface.swift in Sources */,
+				D849A12F1B5458C7007FD661 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

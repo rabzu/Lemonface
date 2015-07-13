@@ -9,14 +9,15 @@
 import Foundation
 import CoreData
 
-
-struct LemonfaceMngr{
+//Public for testing purposes
+public struct LemonfaceMngr{
     
     //MARK: Properties
     let managedObjectContext: NSManagedObjectContext!
     let coreDataStack: CoreDataStack!
     
-    init(managedObjectContext: NSManagedObjectContext, coreDataStack: CoreDataStack) {
+    //Public for testing purposes
+    public init(managedObjectContext: NSManagedObjectContext, coreDataStack: CoreDataStack) {
         self.managedObjectContext = managedObjectContext
         self.coreDataStack = coreDataStack
     }
@@ -24,18 +25,10 @@ struct LemonfaceMngr{
     func save(context: NSManagedObjectContext!){
 //        coreDataStack.saveContext(context)
     }
-//    @NSManaged var photoThumb: NSData
-//    @NSManaged var appliedShops: NSSet
-//    @NSManaged var interestedShops: Lemonshop
-//    @NSManaged var messages: NSSet
-//    @NSManaged var photo: ProfilePhoto
-//    @NSManaged var tags: Tags
 
 
     //MARK: Insert and Upadate Operations
-    func addLemonface(name: String,
-                     email: String,
-                     photo: NSData) -> Lemonface? {
+   public func addNewLemonface(name: String,  email: String, photo: NSData) -> Lemonface? {
             
             let lemonface = NSEntityDescription.insertNewObjectForEntityForName("Lemonface",
                                                                         inManagedObjectContext: self.managedObjectContext) as! Lemonface
@@ -60,7 +53,7 @@ struct LemonfaceMngr{
     
     
     //MARK: Retrieve Operations
-    func getProfile(email: String) -> Lemonface?{
+    func getLemonface(email: String) -> Lemonface?{
         
         //var error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "Lemonface")
@@ -75,11 +68,27 @@ struct LemonfaceMngr{
         }
     }
     
-
-    func deleteProfile(email: String){
+    func addBio(lf: Lemonface, bio: String){
+        lf.bio = bio
+    }
+    
+    //TODO: Insert Location
+//    func addLocation(lf: Lemonface, location: Location){
+//        
+//    }
+    
+    //Change Profile Photo
+    func addPhoto(lf: Lemonface, photo: NSData){
+        lf.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
         
-        
-        let fetchRequest = NSFetchRequest(entityName: "Lemonface")
+        let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
+                                                                            inManagedObjectContext: self.managedObjectContext) as! ProfilePhoto
+        profilePhoto.photo = photo
+        lf.photo = profilePhoto
+    }
+    
+    func deleteLemonface(email: String){
+         let fetchRequest = NSFetchRequest(entityName: "Lemonface")
         fetchRequest.predicate = NSPredicate(format: "email == %@", email)
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
@@ -108,6 +117,26 @@ struct LemonfaceMngr{
     
         return UIImageJPEGRepresentation(newImage, 0.8)
     }
+    
+    //If a candidate makes an applicaiton, the emplore is inserted in its list
+    func makeJobApplication(lf:Lemonface, ls: Lemonshop){
+        //If applicant has not alrady applied
+        if !lf.appliedShops.containsObject(ls){
+            //add the applied shop into the appliedShops set and make a new copy
+            lf.appliedShops = lf.appliedShops.setByAddingObject(ls)
+        }
+        
+    }
+    //TODO: Cancel application
+    func cancelJobApplication(lf:Lemonface, ls: Lemonshop){
+        //you can only remove already existing shops
+        if lf.appliedShops.containsObject(ls){
+//            let lfPredicate = NSPredicate(format: "%@", lf)
+//            lf.appliedShops = lf.appliedShops.filteredSetUsingPredicate(lfPredicate)
+        }
+        
+    }
+    
 
     //TO DO: Asyncrhonous Fetching
     /*

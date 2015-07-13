@@ -104,16 +104,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func FBTokenChanged(notification: NSNotification) {
-//        self.setUpIntroPageController()
-//        let introNVC =  storyboard.instantiateViewControllerWithIdentifier("IntroNavigationController") as! UINavigationController
-//        self.window?.rootViewController = introNVC
+
         println(notification.userInfo)
     }
     
     func FBProfile(notification: NSNotification) {
-        //        self.setUpIntroPageController()
-        //        let introNVC =  storyboard.instantiateViewControllerWithIdentifier("IntroNavigationController") as! UINavigationController
-        //        self.window?.rootViewController = introNVC
+      
         println(notification.userInfo)
     }
 }

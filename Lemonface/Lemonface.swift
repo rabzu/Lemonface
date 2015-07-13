@@ -9,13 +9,13 @@
 import Foundation
 import CoreData
 
-class Lemonface: NSManagedObject {
+public class Lemonface: NSManagedObject {
 
     @NSManaged var bio: String
-    @NSManaged var email: String
+    @NSManaged public var email: String
     @NSManaged var location: String
-    @NSManaged var name: String
-    @NSManaged var photoThumb: NSData
+    @NSManaged public var name: String
+    @NSManaged public var photoThumb: NSData
     @NSManaged var appliedShops: NSSet
     @NSManaged var interestedShops: Lemonshop
     @NSManaged var messages: NSSet
