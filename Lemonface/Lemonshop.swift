@@ -2,7 +2,7 @@
 //  Lemonshop.swift
 //  Lemonface
 //
-//  Created by rabzu on 09/07/2015.
+//  Created by rabzu on 15/07/2015.
 //  Copyright (c) 2015 ooa. All rights reserved.
 //
 
@@ -12,12 +12,12 @@ import CoreData
 class Lemonshop: NSManagedObject {
 
     @NSManaged var about: String
+    @NSManaged var city: String
     @NSManaged var id: NSNumber
     @NSManaged var name: String
     @NSManaged var photoThumb: NSData
-    @NSManaged var street: String
-    @NSManaged var city: String
     @NSManaged var postcode: String
+    @NSManaged var street: String
     @NSManaged var applications: Lemonface
     @NSManaged var invitedFaces: NSSet
     @NSManaged var messages: NSSet

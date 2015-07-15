@@ -47,7 +47,6 @@ public struct LemonfaceMngr{
              //Thumbnail
              lemonface.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
             
-            
             return lemonface
     }
     

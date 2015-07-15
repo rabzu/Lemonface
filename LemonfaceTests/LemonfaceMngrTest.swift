@@ -36,20 +36,20 @@ class LemonfaceMngrTest: XCTestCase {
     
     func testAddLemonface(){
         
-        let image = UIImage(named:"Lemon.jpg")
+        let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Tom Smith"
         let email = "tom@smith.com"
-//        let profile =  lemonfaceMngr.addNewLemonface( name, email: email, photo: photoData)
+        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
         
-//         XCTAssertNotNil(,  "Camper should not be nil")
-//
-//        
-//        XCTAssertTrue(profile!.name == name)
-//        XCTAssertTrue(profile!.email == email)
-//        XCTAssertTrue(profile!.photoThumb == photoData)
+     
         
-        XCTAssertTrue(name == name)
+        XCTAssertNotNil(profile,  "Profile should not be nil")
+
+        XCTAssertTrue(profile!.name == name)
+        XCTAssertTrue(profile!.email == email)
+        XCTAssertTrue(profile!.photo.photo == photoData)
+        
    
     }
 
