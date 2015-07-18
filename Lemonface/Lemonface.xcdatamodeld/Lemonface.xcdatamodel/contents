@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Address" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="potcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Lemonshop" inverseName="shopAddress" inverseEntity="Lemonshop" syncable="YES"/>
+    </entity>
     <entity name="Lemonface" representedClassName="Lemonface.Lemonface" syncable="YES">
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,16 +20,15 @@
     </entity>
     <entity name="Lemonshop" representedClassName="Lemonface.Lemonshop" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoThumb" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="applications" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="appliedShops" inverseEntity="Lemonface" syncable="YES"/>
         <relationship name="invitedFaces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="interestedShops" inverseEntity="Lemonface" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="lemonshop" inverseEntity="Message" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShopPhoto" inverseName="lemonshop" inverseEntity="ShopPhoto" syncable="YES"/>
+        <relationship name="shopAddress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="owner" inverseEntity="Address" syncable="YES"/>
         <relationship name="tags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tags" inverseName="lemonshop" inverseEntity="Tags" syncable="YES"/>
     </entity>
     <entity name="Message" representedClassName="Lemonface.Message" syncable="YES">
@@ -44,15 +49,16 @@
         <attribute name="bar" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="floor" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="kitchen" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="lemonface" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonface" inverseName="tags" inverseEntity="Lemonface" syncable="YES"/>
-        <relationship name="lemonshop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lemonshop" inverseName="tags" inverseEntity="Lemonshop" syncable="YES"/>
+        <relationship name="lemonface" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Lemonface" inverseName="tags" inverseEntity="Lemonface" syncable="YES"/>
+        <relationship name="lemonshop" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Lemonshop" inverseName="tags" inverseEntity="Lemonshop" syncable="YES"/>
     </entity>
     <elements>
         <element name="Lemonface" positionX="702" positionY="-72" width="128" height="195"/>
-        <element name="Lemonshop" positionX="-83" positionY="-45" width="128" height="225"/>
+        <element name="Lemonshop" positionX="-83" positionY="-63" width="128" height="208"/>
         <element name="Message" positionX="315" positionY="-258" width="128" height="105"/>
         <element name="ProfilePhoto" positionX="909" positionY="63" width="128" height="75"/>
-        <element name="ShopPhoto" positionX="-272" positionY="72" width="128" height="75"/>
-        <element name="Tags" positionX="313" positionY="207" width="128" height="120"/>
+        <element name="ShopPhoto" positionX="-342" positionY="159" width="128" height="75"/>
+        <element name="Tags" positionX="313" positionY="207" width="128" height="118"/>
+        <element name="Address" positionX="-387" positionY="-13" width="128" height="103"/>
     </elements>
 </model>

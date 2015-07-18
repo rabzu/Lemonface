@@ -2,18 +2,18 @@
 //  Tags.swift
 //  Lemonface
 //
-//  Created by rabzu on 15/07/2015.
+//  Created by rabzu on 17/07/2015.
 //  Copyright (c) 2015 ooa. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-class Tags: NSManagedObject {
+public class Tags: NSManagedObject {
 
-    @NSManaged var bar: NSNumber
-    @NSManaged var floor: NSNumber
-    @NSManaged var kitchen: NSNumber
+    @NSManaged public var bar: Bool
+    @NSManaged public var floor: Bool
+    @NSManaged public var kitchen: Bool
     @NSManaged var lemonface: Lemonface
     @NSManaged var lemonshop: Lemonshop
 

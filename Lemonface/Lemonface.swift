@@ -11,15 +11,15 @@ import CoreData
 
 public class Lemonface: NSManagedObject {
 
-    @NSManaged var bio: String
+    @NSManaged public var bio: String
     @NSManaged public var email: String
-    @NSManaged var location: String
+    @NSManaged public var location: String
     @NSManaged public var name: String
     @NSManaged public var photoThumb: NSData
-    @NSManaged var appliedShops: NSSet
-    @NSManaged var interestedShops: Lemonshop
-    @NSManaged var messages: NSSet
+    @NSManaged public var appliedShops: NSSet
+    @NSManaged  var interestedShops: Lemonshop
+    @NSManaged public var messages: NSSet
     @NSManaged public var photo: ProfilePhoto
-    @NSManaged var tags: Tags
+    @NSManaged public var tags: Tags
 
 }

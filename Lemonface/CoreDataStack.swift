@@ -16,6 +16,7 @@ public class CoreDataStack {
     let model:NSManagedObjectModel
      let store:CBLIncrementalStore?
     //Public for testing purposes
+    
     public init() {
         //1 Load the model that we defined in the .xcdatamodelmodelId files.
         let bundle = NSBundle.mainBundle()
@@ -32,6 +33,7 @@ public class CoreDataStack {
         context = NSManagedObjectContext()
         context.persistentStoreCoordinator = psc
         
+
         //4
         let fileManager = NSFileManager.defaultManager()
         
@@ -61,6 +63,7 @@ public class CoreDataStack {
         }
         
         let url =  NSURL(string: "http://localhost:4984/lemonface/")
+//        let url =  NSURL(string: "http://localhost:4984/db/")
         let pull = store?.database.createPullReplication(url!)
         let push = store?.database.createPushReplication(url!)
         pull?.continuous = true
@@ -69,15 +72,24 @@ public class CoreDataStack {
         pull?.start()
         push?.start()
         
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "contextDidSave:",
+            name: NSManagedObjectContextDidSaveNotification,
+            object: context)
+        
     }
     
-    func saveContext() {
+   public func saveContext() {
         var error: NSError? = nil
         if context.hasChanges && !context.save(&error) {
             println("Could not save: \(error), \(error?.userInfo)")
         }
     }
-    
+    @objc func contextDidSave(notification: NSNotification) {
+        NSLog("Context Saved")
+    }
+
    
     
 }

@@ -2,7 +2,7 @@
 //  Lemonshop.swift
 //  Lemonface
 //
-//  Created by rabzu on 15/07/2015.
+//  Created by rabzu on 17/07/2015.
 //  Copyright (c) 2015 ooa. All rights reserved.
 //
 
@@ -18,6 +18,7 @@ class Lemonshop: NSManagedObject {
     @NSManaged var photoThumb: NSData
     @NSManaged var postcode: String
     @NSManaged var street: String
+    @NSManaged var email: String
     @NSManaged var applications: Lemonface
     @NSManaged var invitedFaces: NSSet
     @NSManaged var messages: NSSet
