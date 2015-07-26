@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-class ShopPhoto: NSManagedObject {
+public class ShopPhoto: NSManagedObject {
 
-    @NSManaged var photo: NSData
-    @NSManaged var lemonshop: Lemonshop
+    @NSManaged public var photo: NSData
+    @NSManaged public var lemonshop: Lemonshop
 
 }

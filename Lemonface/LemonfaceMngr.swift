@@ -146,4 +146,18 @@ public struct LemonfaceMngr{
         profile.tags = tags
     }
     
+    //MARK: Chat Manager
+  public func sendMessage(lf:Lemonface, ls: Lemonshop, txt: String) -> Message?{
+    
+        let message = NSEntityDescription.insertNewObjectForEntityForName("Message",
+            inManagedObjectContext: self.managedObjectContext) as! Message
+        
+        message.lemonshop = ls
+        message.lemonface = lf
+        message.text = txt
+        message.date = NSDate()
+    
+        return message
+    }
+  
 }

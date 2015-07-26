@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-class Message: NSManagedObject {
+public class Message: NSManagedObject {
 
-    @NSManaged var date: NSDate
-    @NSManaged var text: String
-    @NSManaged var lemonface: Lemonface
-    @NSManaged var lemonshop: Lemonshop
+    @NSManaged public var date: NSDate
+    @NSManaged public var text: String
+    @NSManaged public var lemonface: Lemonface
+    @NSManaged public var lemonshop: Lemonshop
 
 }

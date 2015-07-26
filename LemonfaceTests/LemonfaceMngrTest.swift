@@ -14,12 +14,17 @@ class LemonfaceMngrTest: XCTestCase {
     
     var coreDataStack: CoreDataStack!
     var lemonfaceMngr:  LemonfaceMngr!
+    var lemonshopMngr:  LemonshopMngr!
+
 
     override func setUp() {
         super.setUp()
         coreDataStack = TestCoreDataStack()
         lemonfaceMngr = LemonfaceMngr(managedObjectContext: coreDataStack.context,
-                                           coreDataStack: coreDataStack)
+                                             coreDataStack: coreDataStack)
+        lemonshopMngr = LemonshopMngr(managedObjectContext: coreDataStack.context,
+                                             coreDataStack: coreDataStack)
+
     }
     
     override func tearDown() {
@@ -127,7 +132,7 @@ class LemonfaceMngrTest: XCTestCase {
         lemonfaceMngr.addBio(profile!, bio: bio)
         XCTAssertTrue(profile!.bio == bio)
     }
-    //add Tags to a profile
+    //Add Tags to a profile
     func addLemonfaceTags(){
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
@@ -141,7 +146,25 @@ class LemonfaceMngrTest: XCTestCase {
         XCTAssert(profile!.tags.bar, "bar should be true")
         XCTAssert(profile!.tags.floor, "flooe should be true")
         XCTAssertFalse(profile!.tags.kitchen, "kitchen should be fales by default")
+  }
+  //Test Message sending
+    func sendMessage(){
+        let image = UIImage(named:"lemon.jpg")
+        let photoData = UIImagePNGRepresentation(image)
+        let name = "Xavier Mascherano "
+        let email = "Xavier@Masche.com"
+        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+        
 
-
+        let imageShop = UIImage(named:"shop.jpg")
+        let photoDataShop = UIImagePNGRepresentation(imageShop)
+   
+        
+        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
+        
+        let msg = "Hello, I would like to apply"
+        let message = lemonfaceMngr.sendMessage(profile!, ls: shop!, txt: msg)
+        
+        XCTAssert(message?.text == msg, "Messages should be the same")
     }
 }

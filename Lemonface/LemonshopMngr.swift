@@ -38,34 +38,50 @@ public struct LemonshopMngr{
     
     
     //MARK: Insert and Upadate Operations
-    public func addNewLemonshop(name: String,  email: String, photo: NSData) -> Lemonface? {
+    public func addNewLemonshop(name: String,
+                               email: String,
+                               photo: NSData,
+                              street: String,
+                                city: String,
+                            postCode: String) -> Lemonshop? {
         
-        let lemonface = NSEntityDescription.insertNewObjectForEntityForName("Lemonface",
-            inManagedObjectContext: self.managedObjectContext) as! Lemonface
+        let lemonshop = NSEntityDescription.insertNewObjectForEntityForName("Lemonshop",
+            inManagedObjectContext: self.managedObjectContext) as! Lemonshop
         
-        let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
-            inManagedObjectContext: self.managedObjectContext) as! ProfilePhoto
+                                
+                                
+        let shopPhoto = NSEntityDescription.insertNewObjectForEntityForName("ShopPhoto",
+            inManagedObjectContext: self.managedObjectContext) as! ShopPhoto
+                                
+        let address = NSEntityDescription.insertNewObjectForEntityForName("Address",
+                                    inManagedObjectContext: self.managedObjectContext) as! Address
+                                
         
         
-        
-        lemonface.name = name
-        lemonface.email = email
-        
-        profilePhoto.photo = photo
-        lemonface.photo = profilePhoto
+        lemonshop.name = name
+        lemonshop.email = email
+                                
+        address.street = street
+        address.city = city
+        address.postcode = postCode
+                                
+        lemonshop.shopAddress = address
+            
+        shopPhoto.photo = photo
+        lemonshop.photo = shopPhoto
         
         //Thumbnail
-        lemonface.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
+        lemonshop.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
         
-        return lemonface
+        return lemonshop
     }
     
     
     //MARK: Retrieve Operations
-    public func getLemonface(email: String) -> Lemonface?{
+    public func getLemonshop(email: String) -> Lemonface?{
         
         //var error: NSError?
-        let fetchRequest = NSFetchRequest(entityName: "Lemonface")
+        let fetchRequest = NSFetchRequest(entityName: "Lemonshop")
         fetchRequest.predicate = NSPredicate(format: "email == %@", email)
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
@@ -77,27 +93,27 @@ public struct LemonshopMngr{
         }
     }
     
-    public func addBio(lf: Lemonface, bio: String){
-        lf.bio = bio
+    public func addBio(ls: Lemonshop, about: String){
+        ls.about = about
     }
     
     //TODO: Insert Location
-    //    func addLocation(lf: Lemonface, location: Location){
+    //    func changeAddress(lf: Lemonface, location: Location){
     //
     //    }
     
     //Change Profile Photo
-    func addPhoto(lf: Lemonface, photo: NSData){
-        lf.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
+    func addPhoto(ls: Lemonshop, photo: NSData){
+        ls.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
         
-        let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
-            inManagedObjectContext: self.managedObjectContext) as! ProfilePhoto
-        profilePhoto.photo = photo
-        lf.photo = profilePhoto
+        let shopPhoto = NSEntityDescription.insertNewObjectForEntityForName("ShopPhoto",
+            inManagedObjectContext: self.managedObjectContext) as! ShopPhoto
+        shopPhoto.photo = photo
+        ls.photo = shopPhoto
     }
     
-    public func deleteLemonface(email: String){
-        let fetchRequest = NSFetchRequest(entityName: "Lemonface")
+    public func deleteLemonshop(email: String){
+        let fetchRequest = NSFetchRequest(entityName: "Lemonshop")
         fetchRequest.predicate = NSPredicate(format: "email == %@", email)
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
@@ -130,8 +146,8 @@ public struct LemonshopMngr{
         return UIImageJPEGRepresentation(newImage, 0.8)
     }
     
-    //If a candidate makes an applicaiton, the emplore is inserted in its list
-    func makeJobApplication(lf:Lemonface, ls: Lemonshop){
+    //If a cafe likes an applicant, they can invite them: inserted in its list
+    func inviteCandidate(lf:Lemonface, ls: Lemonshop){
         //If applicant has not alrady applied
         if !lf.appliedShops.containsObject(ls){
             //add the applied shop into the appliedShops set and make a new copy
@@ -139,14 +155,25 @@ public struct LemonshopMngr{
         }
         
     }
-    //TODO: Cancel application
-    func cancelJobApplication(lf:Lemonface, ls: Lemonshop){
+    //TODO: Cancel cancel
+    func denyApplicant(lf:Lemonface, ls: Lemonshop){
         //you can only remove already existing shops
         if lf.appliedShops.containsObject(ls){
             //            let lfPredicate = NSPredicate(format: "%@", lf)
             //            lf.appliedShops = lf.appliedShops.filteredSetUsingPredicate(lfPredicate)
         }
         
+    }
+    
+    func sendMessage(lf:Lemonface, ls: Lemonshop, txt: String){
+        
+        let message = NSEntityDescription.insertNewObjectForEntityForName("Message",
+            inManagedObjectContext: self.managedObjectContext) as! Message
+        
+        message.lemonshop = ls
+        message.lemonface = lf
+        message.text = txt
+        message.date = NSDate()
     }
     
 }

@@ -22,6 +22,9 @@
 		D82FE32D1B38A67900FEC8BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82FE32B1B38A67900FEC8BA /* LaunchScreen.xib */; };
 		D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
 		D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */; };
+		D83584051B65736900468186 /* LemonshopMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83584041B65736900468186 /* LemonshopMngrTest.swift */; };
+		D83584071B65764D00468186 /* Lemonshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83584061B65764D00468186 /* Lemonshop.swift */; };
+		D83584091B657C8A00468186 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83584081B657C8A00468186 /* Address.swift */; };
 		D849A12F1B5458C7007FD661 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */; };
 		D849A1341B546C75007FD661 /* LemonfaceMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */; };
 		D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */; };
@@ -31,8 +34,7 @@
 		D8636D311B56F8E800E9573C /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636D301B56F8E800E9573C /* ProfilePhoto.swift */; };
 		D892E4271B59A56000B689D4 /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
 		D892E42B1B59B0ED00B689D4 /* LemonshopMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E42A1B59B0ED00B689D4 /* LemonshopMngr.swift */; };
-		D892E42D1B59B17E00B689D4 /* Lemonshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E42C1B59B17E00B689D4 /* Lemonshop.swift */; };
-		D892E4331B59B4A400B689D4 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E4321B59B4A400B689D4 /* Tags.swift */; };
+		D892E4331B59B4A400B689D4 /* Lemonface.Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E4321B59B4A400B689D4 /* Lemonface.Tags.swift */; };
 		D89977A41B41D55900AE49F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89977A31B41D55900AE49F5 /* Main.storyboard */; };
 		D8A324E11B4F163900DA3A76 /* LemonfaceMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324E01B4F163900DA3A76 /* LemonfaceMngr.swift */; };
 		D8A324E71B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324E61B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift */; };
@@ -76,6 +78,9 @@
 		D82FE3431B38C29E00FEC8BA /* CBLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLIncrementalStore.h; sourceTree = "<group>"; };
 		D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLIncrementalStore.m; sourceTree = "<group>"; };
 		D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D83584041B65736900468186 /* LemonshopMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonshopMngrTest.swift; sourceTree = "<group>"; };
+		D83584061B65764D00468186 /* Lemonshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonshop.swift; sourceTree = "<group>"; };
+		D83584081B657C8A00468186 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonfaceMngrTest.swift; sourceTree = "<group>"; };
 		D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIntroContentVC.swift; sourceTree = "<group>"; };
@@ -84,8 +89,7 @@
 		D8636D2E1B56F8E800E9573C /* Lemonface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonface.swift; sourceTree = "<group>"; };
 		D8636D301B56F8E800E9573C /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
 		D892E42A1B59B0ED00B689D4 /* LemonshopMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonshopMngr.swift; sourceTree = "<group>"; };
-		D892E42C1B59B17E00B689D4 /* Lemonshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonshop.swift; sourceTree = "<group>"; };
-		D892E4321B59B4A400B689D4 /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		D892E4321B59B4A400B689D4 /* Lemonface.Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonface.Tags.swift; sourceTree = "<group>"; };
 		D89977A31B41D55900AE49F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D8A324E01B4F163900DA3A76 /* LemonfaceMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonfaceMngr.swift; sourceTree = "<group>"; };
 		D8A324E61B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCWrapperFunctions.swift; sourceTree = "<group>"; };
@@ -144,8 +148,9 @@
 		D82901891B4DBCAD000023FD /* CoreDate */ = {
 			isa = PBXGroup;
 			children = (
-				D892E4321B59B4A400B689D4 /* Tags.swift */,
-				D892E42C1B59B17E00B689D4 /* Lemonshop.swift */,
+				D83584081B657C8A00468186 /* Address.swift */,
+				D83584061B65764D00468186 /* Lemonshop.swift */,
+				D892E4321B59B4A400B689D4 /* Lemonface.Tags.swift */,
 				D8636D301B56F8E800E9573C /* ProfilePhoto.swift */,
 				D8636D2E1B56F8E800E9573C /* Lemonface.swift */,
 				D8636D2C1B56F8E800E9573C /* ShopPhoto.swift */,
@@ -225,6 +230,7 @@
 			children = (
 				D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */,
 				D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */,
+				D83584041B65736900468186 /* LemonshopMngrTest.swift */,
 				D82FE3361B38A67900FEC8BA /* Supporting Files */,
 			);
 			path = LemonfaceTests;
@@ -452,6 +458,7 @@
 				D822258A1B420C1400D80AE9 /* ApplicantsTVC.swift in Sources */,
 				D829018E1B4DBF60000023FD /* LFPagePickerVC.swift in Sources */,
 				D82225801B4201B300D80AE9 /* CandidatesTVC.swift in Sources */,
+				D83584091B657C8A00468186 /* Address.swift in Sources */,
 				D8C05C471B493DC4000B850C /* LFIntroVC.swift in Sources */,
 				D8C05C451B47CB81000B850C /* LFLoginVC.swift in Sources */,
 				D81E72A81B4C9A90003F8F8D /* RootNavigationController.swift in Sources */,
@@ -459,16 +466,16 @@
 				D8A324E11B4F163900DA3A76 /* LemonfaceMngr.swift in Sources */,
 				D82225881B4209C900D80AE9 /* ProfileVC.swift in Sources */,
 				D8636D2F1B56F8E800E9573C /* Lemonface.swift in Sources */,
-				D892E42D1B59B17E00B689D4 /* Lemonshop.swift in Sources */,
 				D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */,
 				D8636D311B56F8E800E9573C /* ProfilePhoto.swift in Sources */,
 				D8636D2B1B56F8E700E9573C /* Message.swift in Sources */,
 				D892E42B1B59B0ED00B689D4 /* LemonshopMngr.swift in Sources */,
 				D82FE3231B38A67900FEC8BA /* Lemonface.xcdatamodeld in Sources */,
-				D892E4331B59B4A400B689D4 /* Tags.swift in Sources */,
+				D892E4331B59B4A400B689D4 /* Lemonface.Tags.swift in Sources */,
 				D8636D2D1B56F8E800E9573C /* ShopPhoto.swift in Sources */,
 				D82FE3201B38A67900FEC8BA /* AppDelegate.swift in Sources */,
 				D822257C1B4200EA00D80AE9 /* SLPagingViewSwift.swift in Sources */,
+				D83584071B65764D00468186 /* Lemonshop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +486,7 @@
 				D849A1341B546C75007FD661 /* LemonfaceMngrTest.swift in Sources */,
 				D892E4271B59A56000B689D4 /* CBLIncrementalStore.m in Sources */,
 				D849A12F1B5458C7007FD661 /* TestCoreDataStack.swift in Sources */,
+				D83584051B65736900468186 /* LemonshopMngrTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
