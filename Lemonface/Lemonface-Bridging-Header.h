@@ -4,3 +4,4 @@
 
 #import <CouchbaseLite/CouchbaseLite.h>
 #import "CBLIncrementalStore.h"
+#import <JSQMessagesViewController/JSQMessages.h>

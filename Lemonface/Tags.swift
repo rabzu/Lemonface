@@ -14,7 +14,7 @@ public class Tags: NSManagedObject {
     @NSManaged public var bar: Bool
     @NSManaged public var floor: Bool
     @NSManaged public var kitchen: Bool
-    @NSManaged var lemonface: Lemonface
-    @NSManaged var lemonshop: Lemonshop
+    @NSManaged public var lemonface: Lemonface
+    @NSManaged public var lemonshop: Lemonshop
 
 }

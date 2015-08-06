@@ -109,13 +109,9 @@ class LemonfaceMngrTest: XCTestCase {
        
     
         var fetchedProfile = self.lemonfaceMngr.getLemonface(email)
-
         XCTAssertNotNil(fetchedProfile, "profile should exist")
-
         self.lemonfaceMngr.deleteLemonface(email)
-
         fetchedProfile = self.lemonfaceMngr.getLemonface(email)
-
         XCTAssertNil(fetchedProfile, "profile shouldn't exist")
     }
     
@@ -133,7 +129,7 @@ class LemonfaceMngrTest: XCTestCase {
         XCTAssertTrue(profile!.bio == bio)
     }
     //Add Tags to a profile
-    func addLemonfaceTags(){
+    func testAddLemonfaceTags(){
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Xavier Mascherano "
@@ -148,7 +144,7 @@ class LemonfaceMngrTest: XCTestCase {
         XCTAssertFalse(profile!.tags.kitchen, "kitchen should be fales by default")
   }
   //Test Message sending
-    func sendMessage(){
+    func testSendMessage(){
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Xavier Mascherano "
@@ -166,5 +162,45 @@ class LemonfaceMngrTest: XCTestCase {
         let message = lemonfaceMngr.sendMessage(profile!, ls: shop!, txt: msg)
         
         XCTAssert(message?.text == msg, "Messages should be the same")
+    }
+    
+    func testApplyToLemonshopSuccessfully(){
+        let image = UIImage(named:"lemon.jpg")
+        let photoData = UIImagePNGRepresentation(image)
+        let name = "Xavier Mascherano "
+        let email = "Xavier@Masche.com"
+        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+        
+        let imageShop = UIImage(named:"shop.jpg")
+        let photoDataShop = UIImagePNGRepresentation(imageShop)
+        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
+        
+        let application = lemonfaceMngr.makeJobApplication(profile!,ls: shop!)
+        
+        XCTAssertNotNil(application, "application should exists")
+        XCTAssert(application!.applicationAuthor == profile, "application author should be the same")
+        XCTAssert(profile?.applicationsMade.count == 1, "there should be only one application")
+        XCTAssert(shop?.applicationsReceived.count == 1, "there should be only one application")
+        XCTAssert(application!.applicationAddressee == shop, "application Addresse should be the same")
+    }
+    
+    func testApplyToAlreadyAppliedLemonshop(){
+        
+        let image = UIImage(named:"lemon.jpg")
+        let photoData = UIImagePNGRepresentation(image)
+        let name = "Xavier Mascherano "
+        let email = "Xavier@Masche.com"
+        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+        
+        let imageShop = UIImage(named:"shop.jpg")
+        let photoDataShop = UIImagePNGRepresentation(imageShop)
+        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
+        
+        let applicationFirst = lemonfaceMngr.makeJobApplication(profile!,ls: shop!)
+        let applicationSecond = lemonfaceMngr.makeJobApplication(profile!,ls: shop!)
+
+        XCTAssertNil(applicationSecond, "profile shouldn't exist")
+
+        
     }
 }

@@ -10,16 +10,51 @@ import UIKit
 
 class ApplicantsTVC: UITableViewController {
 
+    var whoAmI: NSManagedObject!
+    var managedObjectContext: NSManagedObjectContext!
+    var coreDataStack: CoreDataStack!
+    
+    var fetchedResultsController : NSFetchedResultsController!
+    
+    @IBOutlet weak var titleLable: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        setUpFetchedResultController()
+   
+        
+     
+        
     }
-
+//    func setUpFetchedResultController(){
+//        //Check wheather you are talking with Lemonshop or Lemonface
+//        switch whoAmI {
+//            case let lf as Lemonface:
+//                //Retreive all the applicants who applied to the Employer
+//                let fetchRequest = NSFetchRequest(entityName: "Application")
+//                fetchRequest.predicate = NSPredicate(format: "applicationAuthor == @%", lf)
+//            case let ls as Lemonshop:
+//                //Retreive all the interested Employers who invited candidates
+//                let fetchRequest = NSFetchRequest(entityName: "Invite")
+//                fetchRequest.predicate = NSPredicate(format: "applicationAuthor == @%", ls)
+//            default: break
+//        }
+////
+//
+//        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+//        fetchRequest.sortDescriptors = [sortDescriptor]
+//        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+//            managedObjectContext: managedObjectContext,
+//            sectionNameKeyPath: nil,
+//            cacheName: nil)
+//        
+//        fetchedResultsController.delegate = self
+//        
+//        var error: NSError? = nil
+//        if (!fetchedResultsController.performFetch(&error)) {
+//            println("Error: \(error?.localizedDescription)")
+//        }
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,15 +74,15 @@ class ApplicantsTVC: UITableViewController {
         return 0
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+
+        
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

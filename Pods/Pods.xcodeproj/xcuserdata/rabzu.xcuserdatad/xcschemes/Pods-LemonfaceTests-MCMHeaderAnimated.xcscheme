@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "976DC81AE7D205708D1507C1"
+               BlueprintIdentifier = "C2D5B8F04AA904320B8A36F4"
                BuildableName = "MCMHeaderAnimated.framework"
                BlueprintName = "Pods-LemonfaceTests-MCMHeaderAnimated"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "976DC81AE7D205708D1507C1"
-            BuildableName = "MCMHeaderAnimated.framework"
-            BlueprintName = "Pods-LemonfaceTests-MCMHeaderAnimated"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

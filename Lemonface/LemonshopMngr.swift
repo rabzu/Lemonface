@@ -78,7 +78,7 @@ public struct LemonshopMngr{
     
     
     //MARK: Retrieve Operations
-    public func getLemonshop(email: String) -> Lemonface?{
+    public func getLemonshop(email: String) -> Lemonshop?{
         
         //var error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "Lemonshop")
@@ -86,7 +86,7 @@ public struct LemonshopMngr{
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
         case let Result.Success(box):
-            return box.unbox.first as! Lemonface?
+            return box.unbox.first as! Lemonshop?
         case let Result.Failure(error):
             println("Error getting profile. Error code: \(error.code)")
             return nil
@@ -118,7 +118,7 @@ public struct LemonshopMngr{
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
         case let Result.Success(box):
-            let p = box.unbox.first as! Lemonface
+            let p = box.unbox.first as! Lemonshop
             managedObjectContext.deleteObject(p)
             println("profile deleted \(p.email)")
             //context should be saved so that delettion takes place
@@ -147,22 +147,34 @@ public struct LemonshopMngr{
     }
     
     //If a cafe likes an applicant, they can invite them: inserted in its list
-    func inviteCandidate(lf:Lemonface, ls: Lemonshop){
-        //If applicant has not alrady applied
-        if !lf.appliedShops.containsObject(ls){
-            //add the applied shop into the appliedShops set and make a new copy
-            lf.appliedShops = lf.appliedShops.setByAddingObject(ls)
-        }
+    func inviteCandidate(lf:Lemonface, ls: Lemonshop)->Invite?{
+        let fetchRequest = NSFetchRequest(entityName: "Invite")
+        fetchRequest.predicate = NSPredicate(format: "InvitationAuthor == %@ && InvitationAddressee == %@", ls, lf)
         
+        switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
+            //application alrady exisits
+        case let Result.Success(box):
+            let p = box.unbox as! [Invite]
+            if p.count == 0 {
+                let invite = NSEntityDescription.insertNewObjectForEntityForName("Invitation", inManagedObjectContext: self.managedObjectContext) as! Invite
+                invite.invitationAuthor = ls
+                invite.invitationAddressee = lf
+                
+                return invite
+            }
+        case let Result.Failure(error):
+            //crate an application
+            println("Error getting profile. Error code: \(error.code)")
+        }
+        return nil
     }
-    //TODO: Cancel cancel
-    func denyApplicant(lf:Lemonface, ls: Lemonshop){
-        //you can only remove already existing shops
-        if lf.appliedShops.containsObject(ls){
-            //            let lfPredicate = NSPredicate(format: "%@", lf)
-            //            lf.appliedShops = lf.appliedShops.filteredSetUsingPredicate(lfPredicate)
-        }
+    public func addTags(ls: Lemonshop, bar: Bool = false, kitchen: Bool = false, floor: Bool = false){
+        let tags = NSEntityDescription.insertNewObjectForEntityForName("Tags", inManagedObjectContext: self.managedObjectContext) as! Tags
         
+        ls.tags = tags
+        ls.tags.bar = bar
+        ls.tags.kitchen = kitchen
+        ls.tags.floor = floor
     }
     
     func sendMessage(lf:Lemonface, ls: Lemonshop, txt: String){
@@ -172,6 +184,7 @@ public struct LemonshopMngr{
         
         message.lemonshop = ls
         message.lemonface = lf
+        message.sentByLF = false
         message.text = txt
         message.date = NSDate()
     }

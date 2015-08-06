@@ -36,8 +36,6 @@ public struct LemonfaceMngr{
             let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
                                                                         inManagedObjectContext: self.managedObjectContext) as! ProfilePhoto
             
-            
-            
             lemonface.name = name
             lemonface.email = email
 
@@ -46,7 +44,6 @@ public struct LemonfaceMngr{
 
              //Thumbnail
              lemonface.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
-            
             return lemonface
     }
     
@@ -121,29 +118,49 @@ public struct LemonfaceMngr{
     }
     
     //If a candidate makes an applicaiton, the emplore is inserted in its list
-    func makeJobApplication(lf:Lemonface, ls: Lemonshop){
-        //If applicant has not alrady applied
-        if !lf.appliedShops.containsObject(ls){
-            //add the applied shop into the appliedShops set and make a new copy
-            lf.appliedShops = lf.appliedShops.setByAddingObject(ls)
-        }
+    public func makeJobApplication(lf:Lemonface, ls: Lemonshop)->Application?{
         
+        let fetchRequest = NSFetchRequest(entityName: "Application")
+        fetchRequest.predicate = NSPredicate(format: "applicationAuthor == %@ && applicationAddressee == %@", lf, ls)
+
+        switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
+            //application alrady exisits
+            case let Result.Success(box):
+                let p = box.unbox as! [Application]
+                if p.count == 0 {
+                    let applicaiton = NSEntityDescription.insertNewObjectForEntityForName("Application", inManagedObjectContext: self.managedObjectContext) as! Application
+                    applicaiton.applicationAuthor = lf
+                    applicaiton.applicationAddressee = ls
+                
+                    return applicaiton
+            }
+            case let Result.Failure(error):
+                //crate an application
+                println("Error getting profile. Error code: \(error.code)")
+            }
+        return nil
     }
+    
+    
     //TODO: Cancel application
     func cancelJobApplication(lf:Lemonface, ls: Lemonshop){
         //you can only remove already existing shops
-        if lf.appliedShops.containsObject(ls){
-//            let lfPredicate = NSPredicate(format: "%@", lf)
-//            lf.appliedShops = lf.appliedShops.filteredSetUsingPredicate(lfPredicate)
-        }
+        let fetchRequest = NSFetchRequest(entityName: "Application")
+        fetchRequest.predicate = NSPredicate(format: "application.author == %@ && application.addressee == %@", lf, ls)
+//        switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
+//            //application alrady exisits
+//            case let Result.Success(box): break
+//            case let Result.Failure(error):
+//          
+//        }
     }
     
-   public func addTags(profile: Lemonface, bar: Bool = false, kitchen: Bool = false, floor: Bool = false){
-        
-        let tags = NSEntityDescription.insertNewObjectForEntityForName("tags",
-            inManagedObjectContext: self.managedObjectContext) as! Tags
-        
-        profile.tags = tags
+   public func addTags(lf: Lemonface, bar: Bool = false, kitchen: Bool = false, floor: Bool = false){
+        let tags = NSEntityDescription.insertNewObjectForEntityForName("Tags", inManagedObjectContext: self.managedObjectContext) as! Tags
+        lf.tags = tags
+        lf.tags.bar = bar
+        lf.tags.floor = floor
+        lf.tags.kitchen = kitchen
     }
     
     //MARK: Chat Manager
@@ -154,6 +171,7 @@ public struct LemonfaceMngr{
         
         message.lemonshop = ls
         message.lemonface = lf
+        message.sentByLF = true
         message.text = txt
         message.date = NSDate()
     

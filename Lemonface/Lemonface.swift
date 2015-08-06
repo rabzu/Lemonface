@@ -2,7 +2,7 @@
 //  Lemonface.swift
 //  Lemonface
 //
-//  Created by rabzu on 15/07/2015.
+//  Created by rabzu on 02/08/2015.
 //  Copyright (c) 2015 ooa. All rights reserved.
 //
 
@@ -16,10 +16,10 @@ public class Lemonface: NSManagedObject {
     @NSManaged public var location: String
     @NSManaged public var name: String
     @NSManaged public var photoThumb: NSData
-    @NSManaged public var appliedShops: NSSet
-    @NSManaged  var interestedShops: Lemonshop
     @NSManaged public var messages: NSSet
     @NSManaged public var photo: ProfilePhoto
     @NSManaged public var tags: Tags
+    @NSManaged public var applicationsMade: NSSet
+    @NSManaged public var invitationsReceived: NSSet
 
 }

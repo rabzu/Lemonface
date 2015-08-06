@@ -23,23 +23,27 @@
 		D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
 		D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */; };
 		D83584051B65736900468186 /* LemonshopMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83584041B65736900468186 /* LemonshopMngrTest.swift */; };
-		D83584071B65764D00468186 /* Lemonshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83584061B65764D00468186 /* Lemonshop.swift */; };
 		D83584091B657C8A00468186 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83584081B657C8A00468186 /* Address.swift */; };
 		D849A12F1B5458C7007FD661 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */; };
 		D849A1341B546C75007FD661 /* LemonfaceMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */; };
 		D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */; };
-		D8636D2B1B56F8E700E9573C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636D2A1B56F8E700E9573C /* Message.swift */; };
 		D8636D2D1B56F8E800E9573C /* ShopPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636D2C1B56F8E800E9573C /* ShopPhoto.swift */; };
-		D8636D2F1B56F8E800E9573C /* Lemonface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636D2E1B56F8E800E9573C /* Lemonface.swift */; };
 		D8636D311B56F8E800E9573C /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636D301B56F8E800E9573C /* ProfilePhoto.swift */; };
+		D86EFD701B67F62B000EEDA3 /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86EFD6F1B67F62B000EEDA3 /* ChatRoomVC.swift */; };
+		D86EFD721B695397000EEDA3 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86EFD711B695397000EEDA3 /* ChatMessage.swift */; };
+		D86EFD741B69D4EA000EEDA3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86EFD731B69D4EA000EEDA3 /* Message.swift */; };
 		D892E4271B59A56000B689D4 /* CBLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */; };
 		D892E42B1B59B0ED00B689D4 /* LemonshopMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E42A1B59B0ED00B689D4 /* LemonshopMngr.swift */; };
-		D892E4331B59B4A400B689D4 /* Lemonface.Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E4321B59B4A400B689D4 /* Lemonface.Tags.swift */; };
+		D892E4331B59B4A400B689D4 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892E4321B59B4A400B689D4 /* Tags.swift */; };
 		D89977A41B41D55900AE49F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89977A31B41D55900AE49F5 /* Main.storyboard */; };
 		D8A324E11B4F163900DA3A76 /* LemonfaceMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324E01B4F163900DA3A76 /* LemonfaceMngr.swift */; };
 		D8A324E71B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A324E61B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift */; };
 		D8C05C451B47CB81000B850C /* LFLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C05C441B47CB81000B850C /* LFLoginVC.swift */; };
 		D8C05C471B493DC4000B850C /* LFIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C05C461B493DC4000B850C /* LFIntroVC.swift */; };
+		D8D0F8971B6E7889009B4007 /* Lemonface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D0F8961B6E7889009B4007 /* Lemonface.swift */; };
+		D8D0F8991B6E7916009B4007 /* Lemonshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D0F8981B6E7916009B4007 /* Lemonshop.swift */; };
+		D8D552111B73E7F900C27E59 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D552101B73E7F900C27E59 /* Application.swift */; };
+		D8D552131B73E7F900C27E59 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D552121B73E7F900C27E59 /* Invite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,22 +83,26 @@
 		D82FE3441B38C29E00FEC8BA /* CBLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLIncrementalStore.m; sourceTree = "<group>"; };
 		D82FE3481B38C9B800FEC8BA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D83584041B65736900468186 /* LemonshopMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonshopMngrTest.swift; sourceTree = "<group>"; };
-		D83584061B65764D00468186 /* Lemonshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonshop.swift; sourceTree = "<group>"; };
 		D83584081B657C8A00468186 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		D849A12E1B5458C7007FD661 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		D849A1331B546C75007FD661 /* LemonfaceMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonfaceMngrTest.swift; sourceTree = "<group>"; };
 		D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIntroContentVC.swift; sourceTree = "<group>"; };
-		D8636D2A1B56F8E700E9573C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D8636D2C1B56F8E800E9573C /* ShopPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPhoto.swift; sourceTree = "<group>"; };
-		D8636D2E1B56F8E800E9573C /* Lemonface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonface.swift; sourceTree = "<group>"; };
 		D8636D301B56F8E800E9573C /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
+		D86EFD6F1B67F62B000EEDA3 /* ChatRoomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
+		D86EFD711B695397000EEDA3 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		D86EFD731B69D4EA000EEDA3 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D892E42A1B59B0ED00B689D4 /* LemonshopMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonshopMngr.swift; sourceTree = "<group>"; };
-		D892E4321B59B4A400B689D4 /* Lemonface.Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonface.Tags.swift; sourceTree = "<group>"; };
+		D892E4321B59B4A400B689D4 /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		D89977A31B41D55900AE49F5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D8A324E01B4F163900DA3A76 /* LemonfaceMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemonfaceMngr.swift; sourceTree = "<group>"; };
 		D8A324E61B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCWrapperFunctions.swift; sourceTree = "<group>"; };
 		D8C05C441B47CB81000B850C /* LFLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLoginVC.swift; sourceTree = "<group>"; };
 		D8C05C461B493DC4000B850C /* LFIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIntroVC.swift; sourceTree = "<group>"; };
+		D8D0F8961B6E7889009B4007 /* Lemonface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonface.swift; sourceTree = "<group>"; };
+		D8D0F8981B6E7916009B4007 /* Lemonshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonshop.swift; sourceTree = "<group>"; };
+		D8D552101B73E7F900C27E59 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		D8D552121B73E7F900C27E59 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,13 +156,15 @@
 		D82901891B4DBCAD000023FD /* CoreDate */ = {
 			isa = PBXGroup;
 			children = (
+				D8D552121B73E7F900C27E59 /* Invite.swift */,
+				D8D552101B73E7F900C27E59 /* Application.swift */,
+				D8D0F8981B6E7916009B4007 /* Lemonshop.swift */,
+				D8D0F8961B6E7889009B4007 /* Lemonface.swift */,
+				D86EFD731B69D4EA000EEDA3 /* Message.swift */,
 				D83584081B657C8A00468186 /* Address.swift */,
-				D83584061B65764D00468186 /* Lemonshop.swift */,
-				D892E4321B59B4A400B689D4 /* Lemonface.Tags.swift */,
+				D892E4321B59B4A400B689D4 /* Tags.swift */,
 				D8636D301B56F8E800E9573C /* ProfilePhoto.swift */,
-				D8636D2E1B56F8E800E9573C /* Lemonface.swift */,
 				D8636D2C1B56F8E800E9573C /* ShopPhoto.swift */,
-				D8636D2A1B56F8E700E9573C /* Message.swift */,
 			);
 			name = CoreDate;
 			sourceTree = "<group>";
@@ -194,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D82FE31F1B38A67900FEC8BA /* AppDelegate.swift */,
+				D86EFD6F1B67F62B000EEDA3 /* ChatRoomVC.swift */,
 				D81E72A71B4C9A90003F8F8D /* RootNavigationController.swift */,
 				D8C05C461B493DC4000B850C /* LFIntroVC.swift */,
 				D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */,
@@ -204,6 +215,7 @@
 				D82225891B420C1400D80AE9 /* ApplicantsTVC.swift */,
 				D822257F1B4201B300D80AE9 /* CandidatesTVC.swift */,
 				D8A324E61B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift */,
+				D86EFD711B695397000EEDA3 /* ChatMessage.swift */,
 				D82FE3471B38C41400FEC8BA /* CB Extras */,
 				D82225771B41F88900D80AE9 /* SLPaginView */,
 				D829018A1B4DBCC3000023FD /* Model */,
@@ -454,28 +466,32 @@
 			files = (
 				D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */,
 				D8A324E71B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift in Sources */,
+				D86EFD701B67F62B000EEDA3 /* ChatRoomVC.swift in Sources */,
 				D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */,
 				D822258A1B420C1400D80AE9 /* ApplicantsTVC.swift in Sources */,
 				D829018E1B4DBF60000023FD /* LFPagePickerVC.swift in Sources */,
 				D82225801B4201B300D80AE9 /* CandidatesTVC.swift in Sources */,
 				D83584091B657C8A00468186 /* Address.swift in Sources */,
+				D8D552111B73E7F900C27E59 /* Application.swift in Sources */,
 				D8C05C471B493DC4000B850C /* LFIntroVC.swift in Sources */,
+				D86EFD741B69D4EA000EEDA3 /* Message.swift in Sources */,
 				D8C05C451B47CB81000B850C /* LFLoginVC.swift in Sources */,
+				D8D0F8971B6E7889009B4007 /* Lemonface.swift in Sources */,
 				D81E72A81B4C9A90003F8F8D /* RootNavigationController.swift in Sources */,
 				D81E72A61B4C91F3003F8F8D /* ChooseFBPageVC.swift in Sources */,
+				D8D0F8991B6E7916009B4007 /* Lemonshop.swift in Sources */,
 				D8A324E11B4F163900DA3A76 /* LemonfaceMngr.swift in Sources */,
 				D82225881B4209C900D80AE9 /* ProfileVC.swift in Sources */,
-				D8636D2F1B56F8E800E9573C /* Lemonface.swift in Sources */,
+				D86EFD721B695397000EEDA3 /* ChatMessage.swift in Sources */,
 				D85DB7411B4A3C04004679E8 /* LFIntroContentVC.swift in Sources */,
 				D8636D311B56F8E800E9573C /* ProfilePhoto.swift in Sources */,
-				D8636D2B1B56F8E700E9573C /* Message.swift in Sources */,
 				D892E42B1B59B0ED00B689D4 /* LemonshopMngr.swift in Sources */,
+				D8D552131B73E7F900C27E59 /* Invite.swift in Sources */,
 				D82FE3231B38A67900FEC8BA /* Lemonface.xcdatamodeld in Sources */,
-				D892E4331B59B4A400B689D4 /* Lemonface.Tags.swift in Sources */,
+				D892E4331B59B4A400B689D4 /* Tags.swift in Sources */,
 				D8636D2D1B56F8E800E9573C /* ShopPhoto.swift in Sources */,
 				D82FE3201B38A67900FEC8BA /* AppDelegate.swift in Sources */,
 				D822257C1B4200EA00D80AE9 /* SLPagingViewSwift.swift in Sources */,
-				D83584071B65764D00468186 /* Lemonshop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
