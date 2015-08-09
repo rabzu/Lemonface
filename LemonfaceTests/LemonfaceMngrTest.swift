@@ -44,7 +44,7 @@ class LemonfaceMngrTest: XCTestCase {
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Tom Smith"
-        let email = "tom@smith.com"
+        let email = "tom@smith8.com"
         let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
         
         XCTAssertNotNil(profile,  "Profile should not be nil")
@@ -52,6 +52,19 @@ class LemonfaceMngrTest: XCTestCase {
         XCTAssertTrue(profile!.email == email)
         XCTAssertTrue(profile!.photo.photo == photoData)
     }
+    
+    func testAddExisitingLemonface(){
+        
+        let image = UIImage(named:"lemon.jpg")
+        let photoData = UIImagePNGRepresentation(image)
+        let name = "Tom Smith"
+        let email = "tom1@smith.com"
+        lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+
+        XCTAssertNil(profile,  "Profile should be nil")
+    }
+    
     
     //Test that exisiting profiles can be retreived using email
     func testGetExisitingLemonface(){
@@ -69,9 +82,9 @@ class LemonfaceMngrTest: XCTestCase {
     
     //Test that non exisiting profiles are not retreived
     func testGetNonExisitingLemonface(){
-        lemonfaceMngr.addNewLemonface("Tom Smith", email: "tom@smith.com", photo:UIImagePNGRepresentation(UIImage(named:"lemon.jpg")))
+        lemonfaceMngr.addNewLemonface("Tom Smith", email: "tom2@smith.com", photo:UIImagePNGRepresentation(UIImage(named:"lemon.jpg")))
         let profile = self.lemonfaceMngr.getLemonface("mark@tom.com")
-        XCTAssertNil(profile,  "Profile should not be nil")
+        XCTAssertNil(profile,  "Profile should  be nil")
     }
     
     //Test Persistant Store Save
@@ -85,7 +98,7 @@ class LemonfaceMngrTest: XCTestCase {
         }
         
     
-        let profile =  lemonfaceMngr.addNewLemonface("Tom Smith", email: "tom@smith.com", photo:UIImagePNGRepresentation(UIImage(named:"lemon.jpg")))
+        let profile =  lemonfaceMngr.addNewLemonface("Tom Smith", email: "tom33311@gmail.o", photo:UIImagePNGRepresentation(UIImage(named:"lemon.jpg")))
         let bio = "I'm have a long experience in woring in bars. I make amazing Mojitos"
         lemonfaceMngr.addBio(profile!, bio: bio)
         
@@ -133,7 +146,7 @@ class LemonfaceMngrTest: XCTestCase {
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Xavier Mascherano "
-        let email = "Xavier@Masche.com"
+        let email = "Xavier3@Masche.com"
         
         let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
         self.lemonfaceMngr.addTags(profile!, bar: true,  floor: true)
@@ -148,7 +161,7 @@ class LemonfaceMngrTest: XCTestCase {
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Xavier Mascherano "
-        let email = "Xavier@Masche.com"
+        let email = "Xavier4@Masche.com"
         let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
         
 
@@ -156,24 +169,27 @@ class LemonfaceMngrTest: XCTestCase {
         let photoDataShop = UIImagePNGRepresentation(imageShop)
    
         
-        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
+        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa434334.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
         
         let msg = "Hello, I would like to apply"
         let message = lemonfaceMngr.sendMessage(profile!, ls: shop!, txt: msg)
         
+        XCTAssertNotNil(message, "Message should not be nil")
         XCTAssert(message?.text == msg, "Messages should be the same")
+        XCTAssert(message!.sentByLF == true, "Must be true")
+        XCTAssert(message!.lemonshop == shop, "Must be same")
     }
     
     func testApplyToLemonshopSuccessfully(){
         let image = UIImage(named:"lemon.jpg")
         let photoData = UIImagePNGRepresentation(image)
         let name = "Xavier Mascherano "
-        let email = "Xavier@Masche.com"
+        let email = "Xavier5@Masche.com"
         let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
         
         let imageShop = UIImage(named:"shop.jpg")
         let photoDataShop = UIImagePNGRepresentation(imageShop)
-        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
+        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa54.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
         
         let application = lemonfaceMngr.makeJobApplication(profile!,ls: shop!)
         
@@ -187,20 +203,18 @@ class LemonfaceMngrTest: XCTestCase {
     func testApplyToAlreadyAppliedLemonshop(){
         
         let image = UIImage(named:"lemon.jpg")
+        let email = "Xavier6434@Masche.com"
         let photoData = UIImagePNGRepresentation(image)
         let name = "Xavier Mascherano "
-        let email = "Xavier@Masche.com"
         let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
         
         let imageShop = UIImage(named:"shop.jpg")
         let photoDataShop = UIImagePNGRepresentation(imageShop)
-        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
+        let shop = lemonshopMngr.addNewLemonshop("Costa Coffe", email: "careers@costa654.com", photo: photoDataShop,  street: "Camden high street", city: "London",  postCode: "nw1 9la")
         
         let applicationFirst = lemonfaceMngr.makeJobApplication(profile!,ls: shop!)
         let applicationSecond = lemonfaceMngr.makeJobApplication(profile!,ls: shop!)
 
         XCTAssertNil(applicationSecond, "profile shouldn't exist")
-
-        
     }
 }

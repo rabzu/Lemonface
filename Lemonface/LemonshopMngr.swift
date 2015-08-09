@@ -44,36 +44,31 @@ public struct LemonshopMngr{
                               street: String,
                                 city: String,
                             postCode: String) -> Lemonshop? {
-        
-        let lemonshop = NSEntityDescription.insertNewObjectForEntityForName("Lemonshop",
-            inManagedObjectContext: self.managedObjectContext) as! Lemonshop
-        
-                                
-                                
-        let shopPhoto = NSEntityDescription.insertNewObjectForEntityForName("ShopPhoto",
-            inManagedObjectContext: self.managedObjectContext) as! ShopPhoto
-                                
-        let address = NSEntityDescription.insertNewObjectForEntityForName("Address",
-                                    inManagedObjectContext: self.managedObjectContext) as! Address
-                                
-        
-        
-        lemonshop.name = name
-        lemonshop.email = email
-                                
-        address.street = street
-        address.city = city
-        address.postcode = postCode
-                                
-        lemonshop.shopAddress = address
-            
-        shopPhoto.photo = photo
-        lemonshop.photo = shopPhoto
-        
-        //Thumbnail
-        lemonshop.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
-        
-        return lemonshop
+
+                if getLemonshop(email) == nil{
+                                    
+                    let lemonshop = NSEntityDescription.insertNewObjectForEntityForName("Lemonshop",
+                        inManagedObjectContext: self.managedObjectContext) as! Lemonshop
+                    let shopPhoto = NSEntityDescription.insertNewObjectForEntityForName("ShopPhoto",
+                        inManagedObjectContext: self.managedObjectContext) as! ShopPhoto
+                    let address = NSEntityDescription.insertNewObjectForEntityForName("Address",
+                        inManagedObjectContext: self.managedObjectContext) as! Address
+                    lemonshop.name = name
+                    lemonshop.email = email
+                    
+                    address.street = street
+                    address.city = city
+                    address.postcode = postCode
+                    
+                    lemonshop.shopAddress = address
+                    
+                    shopPhoto.photo = photo
+                    lemonshop.photo = shopPhoto
+                    //Thumbnail
+                    lemonshop.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
+                    return lemonshop
+                 }
+                return nil
     }
     
     
@@ -147,16 +142,16 @@ public struct LemonshopMngr{
     }
     
     //If a cafe likes an applicant, they can invite them: inserted in its list
-    func inviteCandidate(lf:Lemonface, ls: Lemonshop)->Invite?{
+   public func inviteCandidate(lf:Lemonface, ls: Lemonshop)->Invite?{
         let fetchRequest = NSFetchRequest(entityName: "Invite")
-        fetchRequest.predicate = NSPredicate(format: "InvitationAuthor == %@ && InvitationAddressee == %@", ls, lf)
+        fetchRequest.predicate = NSPredicate(format: "invitationAuthor == %@ && invitationAddressee == %@", ls, lf)
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             //application alrady exisits
         case let Result.Success(box):
             let p = box.unbox as! [Invite]
             if p.count == 0 {
-                let invite = NSEntityDescription.insertNewObjectForEntityForName("Invitation", inManagedObjectContext: self.managedObjectContext) as! Invite
+                let invite = NSEntityDescription.insertNewObjectForEntityForName("Invite", inManagedObjectContext: self.managedObjectContext) as! Invite
                 invite.invitationAuthor = ls
                 invite.invitationAddressee = lf
                 
@@ -177,7 +172,7 @@ public struct LemonshopMngr{
         ls.tags.floor = floor
     }
     
-    func sendMessage(lf:Lemonface, ls: Lemonshop, txt: String){
+   public func sendMessage(ls: Lemonshop, lf:Lemonface, txt: String)->Message?{
         
         let message = NSEntityDescription.insertNewObjectForEntityForName("Message",
             inManagedObjectContext: self.managedObjectContext) as! Message
@@ -187,6 +182,8 @@ public struct LemonshopMngr{
         message.sentByLF = false
         message.text = txt
         message.date = NSDate()
+    
+        return message
     }
     
 }

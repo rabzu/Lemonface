@@ -30,21 +30,23 @@ public struct LemonfaceMngr{
     //MARK: Insert and Upadate Operations
    public func addNewLemonface(name: String,  email: String, photo: NSData) -> Lemonface? {
             
-            let lemonface = NSEntityDescription.insertNewObjectForEntityForName("Lemonface",
+    if getLemonface(email) == nil{
+        let lemonface = NSEntityDescription.insertNewObjectForEntityForName("Lemonface",
                                                                         inManagedObjectContext: self.managedObjectContext) as! Lemonface
             
-            let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
+        let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
                                                                         inManagedObjectContext: self.managedObjectContext) as! ProfilePhoto
-            
             lemonface.name = name
             lemonface.email = email
-
+    
             profilePhoto.photo = photo
             lemonface.photo = profilePhoto
-
-             //Thumbnail
-             lemonface.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
+    
+            //Thumbnail
+            lemonface.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
             return lemonface
+        }
+        return nil
     }
     
     
