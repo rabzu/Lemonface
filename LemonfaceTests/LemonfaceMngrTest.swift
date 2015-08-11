@@ -53,18 +53,18 @@ class LemonfaceMngrTest: XCTestCase {
         XCTAssertTrue(profile!.photo.photo == photoData)
     }
     
-    func testAddExisitingLemonface(){
-        
-        let image = UIImage(named:"lemon.jpg")
-        let photoData = UIImagePNGRepresentation(image)
-        let name = "Tom Smith"
-        let email = "tom1@smith.com"
-        lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
-        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
-
-        XCTAssertNil(profile,  "Profile should be nil")
-    }
-    
+//    func testAddExisitingLemonface(){
+//        
+//        let image = UIImage(named:"lemon.jpg")
+//        let photoData = UIImagePNGRepresentation(image)
+//        let name = "Tom Smith"
+//        let email = "tom1@smith.com"
+//        lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+//        let profile =  lemonfaceMngr.addNewLemonface(name, email: email, photo: photoData)
+//
+//        XCTAssertNil(profile,  "Profile should be nil")
+//    }
+//    
     
     //Test that exisiting profiles can be retreived using email
     func testGetExisitingLemonface(){

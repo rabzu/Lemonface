@@ -30,7 +30,7 @@ public struct LemonfaceMngr{
     //MARK: Insert and Upadate Operations
    public func addNewLemonface(name: String,  email: String, photo: NSData) -> Lemonface? {
             
-    if getLemonface(email) == nil{
+//    if getLemonface(email) == nil{
         let lemonface = NSEntityDescription.insertNewObjectForEntityForName("Lemonface",
                                                                         inManagedObjectContext: self.managedObjectContext) as! Lemonface
             
@@ -45,8 +45,8 @@ public struct LemonfaceMngr{
             //Thumbnail
             lemonface.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
             return lemonface
-        }
-        return nil
+//        }
+//        return nil
     }
     
     

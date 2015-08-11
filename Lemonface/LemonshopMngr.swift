@@ -44,8 +44,8 @@ public struct LemonshopMngr{
                               street: String,
                                 city: String,
                             postCode: String) -> Lemonshop? {
-
-                if getLemonshop(email) == nil{
+               //Disabled because of testing
+            //if getLemonshop(email) == nil{
                                     
                     let lemonshop = NSEntityDescription.insertNewObjectForEntityForName("Lemonshop",
                         inManagedObjectContext: self.managedObjectContext) as! Lemonshop
@@ -67,8 +67,8 @@ public struct LemonshopMngr{
                     //Thumbnail
                     lemonshop.photoThumb = self.imageDataScaledToHeight(photo, height: 120)
                     return lemonshop
-                 }
-                return nil
+//                 }
+//                return nil
     }
     
     
