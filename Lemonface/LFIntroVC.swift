@@ -10,6 +10,9 @@ import UIKit
 import FBSDKLoginKit
 
 class LFIntroVC: UIViewController, UIPageViewControllerDataSource {
+    
+    var coreDataStack: CoreDataStack?
+    
     var pageViewController: UIPageViewController!
 
     let pageTitles = ["Intro 1", "Intro 2", "Intro 3"]
@@ -42,11 +45,10 @@ class LFIntroVC: UIViewController, UIPageViewControllerDataSource {
         let loginVC = segue.destinationViewController as! LFLoginVC
 
         if segue.identifier == "toLemonShop" {
-            loginVC.lemonShop = true
-            loginVC.lemonFace = false
+            loginVC.lemonface = false
+            loginVC.coreDataStack = coreDataStack
         } else if segue.identifier == "toLemonFace" {
-            loginVC.lemonShop = false
-            loginVC.lemonFace = true
+            loginVC.lemonface = true
         }
         
     }

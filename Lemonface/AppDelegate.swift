@@ -41,16 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
-        let navigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! UINavigationController
+        let rootNavigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! RootNavigationController
        
         //If app is already logged in Move straight to jobs
       
         if (FBSDKAccessToken.currentAccessToken() != nil){
-            
-            self.window?.rootViewController = navigationController
+            //pass the CDstack
+            rootNavigationController.coreDataStack = coreDataStack
+            self.window?.rootViewController = rootNavigationController
         }else{
             self.setUpIntroPageController()
-            let introNVC =  storyboard.instantiateViewControllerWithIdentifier("IntroNavigationController") as! UINavigationController
+            let introNVC =  storyboard.instantiateViewControllerWithIdentifier("IntroNavigationController") as! IntroNavigationController
+            introNVC.coreDataStack = coreDataStack
             self.window?.rootViewController = introNVC
         }
         self.window?.backgroundColor = UIColor.whiteColor()

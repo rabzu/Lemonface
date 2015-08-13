@@ -44,6 +44,7 @@
 		D8D0F8991B6E7916009B4007 /* Lemonshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D0F8981B6E7916009B4007 /* Lemonshop.swift */; };
 		D8D552111B73E7F900C27E59 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D552101B73E7F900C27E59 /* Application.swift */; };
 		D8D552131B73E7F900C27E59 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D552121B73E7F900C27E59 /* Invite.swift */; };
+		D8EB66DC1B7D474E00FB2B53 /* IntroNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB66DB1B7D474E00FB2B53 /* IntroNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		D8D0F8981B6E7916009B4007 /* Lemonshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lemonshop.swift; sourceTree = "<group>"; };
 		D8D552101B73E7F900C27E59 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		D8D552121B73E7F900C27E59 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
+		D8EB66DB1B7D474E00FB2B53 /* IntroNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			children = (
 				D82FE31F1B38A67900FEC8BA /* AppDelegate.swift */,
 				D86EFD6F1B67F62B000EEDA3 /* ChatRoomVC.swift */,
+				D8EB66DB1B7D474E00FB2B53 /* IntroNavigationController.swift */,
 				D81E72A71B4C9A90003F8F8D /* RootNavigationController.swift */,
 				D8C05C461B493DC4000B850C /* LFIntroVC.swift */,
 				D85DB7401B4A3C04004679E8 /* LFIntroContentVC.swift */,
@@ -466,6 +469,7 @@
 			files = (
 				D82FE3491B38C9B800FEC8BA /* CoreDataStack.swift in Sources */,
 				D8A324E71B4F1F0700DA3A76 /* ObjCWrapperFunctions.swift in Sources */,
+				D8EB66DC1B7D474E00FB2B53 /* IntroNavigationController.swift in Sources */,
 				D86EFD701B67F62B000EEDA3 /* ChatRoomVC.swift in Sources */,
 				D82FE3451B38C29E00FEC8BA /* CBLIncrementalStore.m in Sources */,
 				D822258A1B420C1400D80AE9 /* ApplicantsTVC.swift in Sources */,

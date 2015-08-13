@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVs-5h-CmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1206" y="838"/>
+            <point key="canvasLocation" x="-1232" y="838"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fUj-C7-SJR">
@@ -388,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fog-Ay-tb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-755" y="89"/>
+            <point key="canvasLocation" x="-523" y="131"/>
         </scene>
         <!--RootNavigationController-->
         <scene sceneID="6Ip-Kb-2PT">
@@ -470,10 +470,10 @@
             </objects>
             <point key="canvasLocation" x="210" y="-72"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Intro Navigation Controller-->
         <scene sceneID="jPy-SC-yyU">
             <objects>
-                <navigationController storyboardIdentifier="IntroNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jUJ-rv-Zjs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="IntroNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jUJ-rv-Zjs" customClass="IntroNavigationController" customModule="Lemonface" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VA4-Bo-R2Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

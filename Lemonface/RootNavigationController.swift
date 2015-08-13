@@ -9,7 +9,10 @@
 import UIKit
 
 class RootNavigationController: UINavigationController {
-
+    
+    var whoAmI: NSManagedObject!
+    var coreDataStack: CoreDataStack?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let controller = self.setUpHeaderAnimation()
@@ -37,14 +40,18 @@ class RootNavigationController: UINavigationController {
         var profileCTR = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC
         profileCTR.title = "Profile"
         profileCTR.view.backgroundColor = orange
-        
+        //TODO: profileCTR.coreDataStack = coreDataStack
+
         var candidatesCTR = storyboard.instantiateViewControllerWithIdentifier("CandidatesTVC") as! CandidatesTVC
         candidatesCTR.title = "Candidates"
         candidatesCTR.view.backgroundColor = UIColor.yellowColor()
+        //TODO: candidatesCTR.coreDataStack = coreDataStack
+
         
         var applicantsCTR = storyboard.instantiateViewControllerWithIdentifier("ApplicantsTVC") as! ApplicantsTVC
         applicantsCTR.title = "Applicants"
         applicantsCTR.view.backgroundColor = gray
+        applicantsCTR.coreDataStack = coreDataStack
         
         var img1 = UIImage(named: "gear")
         img1 = img1?.imageWithRenderingMode(.AlwaysTemplate)

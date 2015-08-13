@@ -6,11 +6,13 @@
 //  Copyright (c) 2015 ooa. All rights reserved.
 //
 
+
+
 import UIKit
 
 class CandidatesTVC: UITableViewController {
 
-    var managedContext: NSManagedObjectContext!
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()

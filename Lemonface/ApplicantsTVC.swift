@@ -6,6 +6,14 @@
 //  Copyright (c) 2015 ooa. All rights reserved.
 //
 
+/*
+Contact list tableView Controller. If you are
+->Lemonface: list of all the lemonshops that invited you
+->Lemonshop: list of all the lemonfaces that applied to you
+
+by selecting a contact the ViewController is segued to a chat
+*/
+
 import UIKit
 
 class ApplicantsTVC: UITableViewController, NSFetchedResultsControllerDelegate {

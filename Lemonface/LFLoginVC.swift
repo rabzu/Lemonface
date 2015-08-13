@@ -11,11 +11,11 @@ import FBSDKLoginKit
 import SwiftyJSON
 
 class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
-
+    
+    var coreDataStack: CoreDataStack?
     var pagesList:[JSON]? = []
 
-    var lemonFace: Bool = false
-    var lemonShop: Bool = false
+    var lemonface: Bool = false
     let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
     
     @IBOutlet weak var loginButton: FBSDKLoginButton!
@@ -26,17 +26,13 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-        
-        
-            if lemonFace{
-                self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-            } else if lemonShop{
-                self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-                self.loginButton.publishPermissions = ["manage_pages"]
-            }
-            self.loginButton.delegate = self
+        if lemonface{
+            self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        } else {
+            self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+            self.loginButton.publishPermissions = ["manage_pages"]
+        }
+        self.loginButton.delegate = self
       
         
     }
@@ -56,16 +52,17 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
               self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             //If you ask for multiple permisssions at once, you should check if specific permission is missing
-            if lemonFace == true {
+            if lemonface == true {
                 
                 let storyboard = UIStoryboard(name:"Main", bundle:nil)
-                let navigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! UINavigationController
-                
+                let navigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! RootNavigationController
+//                navigationController.whoAmI = 
                 //If app is already logged in Move straight to jobs
+                navigationController.whoAmI = extractLemonface()
                 appDelegate.window?.rootViewController = navigationController
 //                self.performSegueWithIdentifier("toRootNavigationController", sender: self)
-            } else if lemonShop == true {
-                
+            } else if lemonface == false {
+               //If its a lemonshop
                 getPagesList()
                
             }
@@ -82,7 +79,7 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("logout")
     }
-    
+    //If you are looking for candidates and you are a lemonshop show list of Pages attached to your FB profile
     func getPagesList() {
          let pagesRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/accounts", parameters: nil)
         pagesRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -104,29 +101,30 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
             
         })
     }
-    
-
-    
-    func returnUserData(){
+    //Create Lemonface and store it in the coredata->couchbase
+    func extractLemonface() -> Lemonface?{
+        var lf : Lemonface?
         let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-       
         graphRequest.startWithCompletionHandler({
-            
-            
             (connection, result, error) -> Void in
-            
-                if( error != nil){
-                    //process error
-                    println("Error: \(error)")
-                } else{
-                    println("user: \(result)")
-                     let userName: String = result.valueForKey("name") as! String
-                    let userEmail: String = result.valueForKey("email") as! String
-                }
-            
+            if( error != nil){
+                //process error
+                println("Error: \(error)")
+            } else{
+                let lemonfaceMngr = LemonfaceMngr(managedObjectContext: self.coreDataStack!.context, coreDataStack: self.coreDataStack!)
+                
+
+                let userName: String = result.valueForKey("name") as! String
+                let userEmail: String = result.valueForKey("email") as! String
+//                let profilePhoto:
+                
+                //TODO user profile photo
+                lf = lemonfaceMngr.addNewLemonface(userName, email: userEmail, photo: nil)
+            }
         })
-        
+       return lf
     }
+    
     
     // MARK: - Navigation
 
