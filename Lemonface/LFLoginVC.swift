@@ -52,14 +52,15 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
               self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             //If you ask for multiple permisssions at once, you should check if specific permission is missing
+            println("login button did completeResult \(lemonface)")
             if lemonface == true {
-                
                 let storyboard = UIStoryboard(name:"Main", bundle:nil)
                 let navigationController =  storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as! RootNavigationController
-//                navigationController.whoAmI = 
+                
                 //If app is already logged in Move straight to jobs
                 navigationController.whoAmI = extractLemonface()
-                appDelegate.window?.rootViewController = navigationController
+                println("HELLO  \(navigationController.whoAmI)")
+               // appDelegate.window?.rootViewController = navigationController
 //                self.performSegueWithIdentifier("toRootNavigationController", sender: self)
             } else if lemonface == false {
                //If its a lemonshop
@@ -104,27 +105,48 @@ class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
     //Create Lemonface and store it in the coredata->couchbase
     func extractLemonface() -> Lemonface?{
         var lf : Lemonface?
+        
+        println("Im extracting Lemonface from fb -> CD")
+
         let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({
-            (connection, result, error) -> Void in
+            (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+
             if( error != nil){
                 //process error
                 println("Error: \(error)")
             } else{
+                
+                let name: String = result.valueForKey("name") as! String
+                let email: String = result.valueForKey("email") as! String
+                
+                println("name \(name) && EMAIL \(email)")
+                
                 let lemonfaceMngr = LemonfaceMngr(managedObjectContext: self.coreDataStack!.context, coreDataStack: self.coreDataStack!)
                 
-
-                let userName: String = result.valueForKey("name") as! String
-                let userEmail: String = result.valueForKey("email") as! String
-//                let profilePhoto:
-                
-                //TODO user profile photo
-                lf = lemonfaceMngr.addNewLemonface(userName, email: userEmail, photo: nil)
+                if let profilePic = self.getFBProfilePic(){
+                    lf = lemonfaceMngr.addNewLemonface(name, email: email, photo: profilePic)
+                } else {
+                    //lf = lemonfaceMngr.addNewLemonface(name, email: email, photo: nil)
+                }
             }
         })
        return lf
     }
-    
+    func getFBProfilePic() -> NSData? {
+        // Get user profile pic
+        let url = NSURL(string: "https://graph.facebook.com/me/picture?type=large")
+        let urlRequest = NSURLRequest(URL: url!)
+        var pic: NSData?
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue()){ (response:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
+            if( error != nil){
+                println("hello \(data)")
+                pic = data
+            }
+        }
+        return pic
+    }
     
     // MARK: - Navigation
 

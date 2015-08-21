@@ -48,6 +48,7 @@ class LFIntroVC: UIViewController, UIPageViewControllerDataSource {
             loginVC.lemonface = false
             loginVC.coreDataStack = coreDataStack
         } else if segue.identifier == "toLemonFace" {
+            println("Im lemonface to lemonface")
             loginVC.lemonface = true
         }
         
