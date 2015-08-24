@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D5DF7F3E82529BB1CF84C62"
+               BlueprintIdentifier = "F26D2AA8BCF138B18A1525C3"
                BuildableName = "MCMHeaderAnimated.framework"
                BlueprintName = "Pods-Lemonface-MCMHeaderAnimated"
                ReferencedContainer = "container:Pods.xcodeproj">

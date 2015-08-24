@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCAD9D7D576032A76C27A4CB"
+               BlueprintIdentifier = "B72C0279D0BDC1A7F3C0CD81"
                BuildableName = "JSQMessagesViewController.framework"
                BlueprintName = "Pods-Lemonface-JSQMessagesViewController"
                ReferencedContainer = "container:Pods.xcodeproj">

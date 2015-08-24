@@ -49,19 +49,25 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Bolts.framework'
+  install_framework 'Box.framework'
+  install_framework 'BrightFutures.framework'
   install_framework 'FBSDKCoreKit.framework'
   install_framework 'FBSDKLoginKit.framework'
   install_framework 'JSQMessagesViewController.framework'
   install_framework 'JSQSystemSoundPlayer.framework'
   install_framework 'MCMHeaderAnimated.framework'
+  install_framework 'Result.framework'
   install_framework 'SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Bolts.framework'
+  install_framework 'Box.framework'
+  install_framework 'BrightFutures.framework'
   install_framework 'FBSDKCoreKit.framework'
   install_framework 'FBSDKLoginKit.framework'
   install_framework 'JSQMessagesViewController.framework'
   install_framework 'JSQSystemSoundPlayer.framework'
   install_framework 'MCMHeaderAnimated.framework'
+  install_framework 'Result.framework'
   install_framework 'SwiftyJSON.framework'
 fi

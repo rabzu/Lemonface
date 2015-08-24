@@ -5,6 +5,9 @@ PODS:
   - Bolts/AppLinks (1.2.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.2.0)
+  - Box (1.2.2)
+  - BrightFutures (2.0.1):
+    - Result (~> 0.4.3)
   - couchbase-lite-ios (1.1.0):
     - couchbase-lite-ios/Core (= 1.1.0)
   - couchbase-lite-ios/Core (1.1.0)
@@ -23,9 +26,12 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - MCMHeaderAnimated (0.0.1)
+  - Result (0.4.4):
+    - Box (~> 1.2)
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
+  - BrightFutures
   - couchbase-lite-ios (~> 1.1)
   - FBSDKCoreKit (~> 4.3)
   - FBSDKLoginKit (~> 4.3)
@@ -35,12 +41,15 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Box: a92e8aa4c099e6bc0733829665caf9e668ef53b8
+  BrightFutures: 27704272a695324b42538a2d85b20ac3f24228bd
   couchbase-lite-ios: fc7be01032dc1a4c923d1a52b6734eb9b20bf072
   FBSDKCoreKit: a3a60225a84abeace291d0fe71cae29a627382c2
   FBSDKLoginKit: 6bc2f8f2628c3b6d2e346762fff8cb55cfd3a58d
   JSQMessagesViewController: ca11f86fa68ca70835f05e169df9244147c1dc40
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   MCMHeaderAnimated: 4264eff339b0ebba3ed3856c6da68383b386bce4
+  Result: b44f6bc8762bbffaf2c5df58f2c7d12c3496ced8
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
 COCOAPODS: 0.36.3

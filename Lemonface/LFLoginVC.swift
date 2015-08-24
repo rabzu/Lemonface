@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import SwiftyJSON
+import BrightFutures
 
 class LFLoginVC: UIViewController, FBSDKLoginButtonDelegate {
     

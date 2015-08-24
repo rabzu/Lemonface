@@ -8,6 +8,7 @@ pod 'FBSDKCoreKit', '~> 4.3'
 pod 'FBSDKLoginKit', '~> 4.3'
 pod 'SwiftyJSON', '~> 2.2'
 pod 'JSQMessagesViewController', '~> 7.1'
+pod 'BrightFutures'
 end
 
 target 'LemonfaceTests' do
@@ -17,5 +18,6 @@ pod 'FBSDKCoreKit', '~> 4.3'
 pod 'FBSDKLoginKit', '~> 4.3'
 pod 'SwiftyJSON', '~> 2.2'
 pod 'JSQMessagesViewController', '~> 7.1'
+pod 'BrightFutures'
 end
 
